@@ -21,9 +21,6 @@ vim.opt.termguicolors = true
 -- OR setup with some options
 require("nvim-tree").setup()
 
--- Setup Buffer Line
-require("bufferline").setup{}
-
 require('telescope.builtin')
 
 -- Define keymap to open Git Files with leader+f
