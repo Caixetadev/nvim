@@ -11,6 +11,23 @@ vim.cmd([[
   augroup end
 ]])
 
+local lsp = require('lsp-zero')
+
+lsp.preset('recommended')
+
+-- Fix Undefined global 'vim'
+lsp.configure('lua-language-server', {
+    settings = {
+        Lua = {
+            diagnostics = {
+                globals = { 'vim' }
+            }
+        }
+    }
+})
+
+lsp.setup()
+
 -- disable netrw at the very start of your init.lua (strongly advised)
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
@@ -18,13 +35,18 @@ vim.g.loaded_netrwPlugin = 1
 -- set termguicolors to enable highlight groups
 vim.opt.termguicolors = true
 
--- OR setup with some options
-require("nvim-tree").setup()
+local builtin = require('telescope.builtin')
 
-require('telescope.builtin')
+require('lualine').setup()
 
+-- Define keymap para abrir o find files
+vim.keymap.set('n', '<leader>pf', builtin.find_files, {})
 -- Define keymap to open Git Files with leader+f
-vim.api.nvim_set_keymap('n', '<leader>f', '<cmd>lua require("telescope.builtin").git_files()<CR>', { noremap = true, silent = true })
+vim.keymap.set('n', '<C-p>', builtin.git_files, {})
+-- Define keymap para abrir o grep e procurar uma palavra
+vim.keymap.set('n', '<leader>ps', function ()
+	builtin.grep_string({  search = vim.fn.input('Grep > ')});
+end)
 
 -- Ativa as linhas
 vim.wo.number = true
@@ -46,20 +68,6 @@ vim.cmd('colorscheme gruvbox')
 
 -- Definir a tecla de atalho com a leader e gg para abrir o Lazygit em fullscreen
 vim.api.nvim_set_keymap('n', '<Leader>gg', ':LazyGit<CR>', { noremap = true, silent = true })
-
--- Mapeia o shift + l para avançar o buffer
-vim.api.nvim_set_keymap('n', '<S-l>', ':BufferLineCycleNext<CR>', { noremap = true, silent = true })
-
--- Mapeia o shift + h para voltar o buffer
-vim.api.nvim_set_keymap('n', '<S-h>', ':BufferLineCyclePrev<CR>', { noremap = true, silent = true })
-
--- Mapear tecla de atalho do Leader + e para acionar o NvimTreeToggle
-vim.api.nvim_set_keymap('n', '<Leader>e', ':NvimTreeToggle<CR>', { noremap = true, silent = true })
-
--- Configurações para abrir o Lazygit em tela cheia
-vim.g.lazygit_floating_window_scaling_factor = 1
-vim.g.lazygit_floating_window_use_plenary = 1
-vim.g.lazygit_floating_window_winblend = 0
 
 vim.o.background = "dark" -- Define o modo de fundo do Neovim para escuro
 
