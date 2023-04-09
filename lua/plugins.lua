@@ -11,7 +11,7 @@ return require('packer').startup(function(use)
   use 'kdheepak/lazygit.nvim'
 
   -- Tema
-  use 'gruvbox-community/gruvbox'
+  use 'sainnhe/gruvbox-material'
 
   -- Discord Presence
   use 'andweeb/presence.nvim'
