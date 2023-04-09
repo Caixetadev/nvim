@@ -80,3 +80,22 @@ vim.o.background = "dark" -- Define o modo de fundo do Neovim para escuro
 -- Esse comando permite que o Vim e o Neovim usem a área de transferência do sistema operacional para copiar e colar texto.
 vim.opt.clipboard:append("unnamedplus")
 
+-- Buffers
+
+-- Abrir lista de buffer e escolher um
+vim.api.nvim_set_keymap('n', '<leader>bl', ':buffers<CR>:buffer<Space>', { noremap = true, silent = true })
+
+-- Abrir lista de buffer e escolher um
+vim.api.nvim_set_keymap('n', '<leader>bd', ':bd<CR>', { noremap = true, silent = true })
+
+-- Abrir o proximo buffer
+vim.api.nvim_set_keymap('n', '<leader>bn', ':bn<CR>', { noremap = true, silent = true })
+
+-- Abrir o buffer anterior
+vim.api.nvim_set_keymap('n', '<leader>bp', ':bp<CR>', { noremap = true, silent = true })
+
+-- Abrir um novo buffer na horizontal
+vim.api.nvim_set_keymap('n', '<leader>bh', ':new<CR>', { noremap = true, silent = true })
+
+-- Abrir um novo buffer na vertical
+vim.api.nvim_set_keymap('n', '<leader>bv', ':vnew<CR>', { noremap = true, silent = true })
