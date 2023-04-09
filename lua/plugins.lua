@@ -33,6 +33,9 @@ return require('packer').startup(function(use)
     end
   }
 
+  -- Linter
+  use 'dense-analysis/ale'
+
   use {
 	  'VonHeikemen/lsp-zero.nvim',
 	  branch = 'v1.x',
