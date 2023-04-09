@@ -22,6 +22,9 @@ return require('packer').startup(function(use)
   -- Waka Time
   use 'wakatime/vim-wakatime'
 
+  -- Vim Be Good
+  use 'ThePrimeagen/vim-be-good'
+
   use {
 	  'VonHeikemen/lsp-zero.nvim',
 	  branch = 'v1.x',
