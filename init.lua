@@ -32,6 +32,10 @@ lsp.setup()
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
 
+vim.o.expandtab = true
+vim.o.tabstop = 2
+vim.o.shiftwidth = 2
+vim.o.softtabstop = 2
 -- set termguicolors to enable highlight groups
 vim.opt.termguicolors = true
 
@@ -64,7 +68,9 @@ vim.api.nvim_set_keymap('n', '<leader>q', ':wq<CR>', { noremap = true })
 vim.api.nvim_set_keymap('n', '<leader>sv', ':source ~/.config/nvim/init.lua<CR>', { noremap = true })
 
 -- Ativa o tema Gruvbox
-vim.cmd('colorscheme gruvbox')
+vim.cmd('colorscheme gruvbox-material')
+vim.g.gruvbox_material_background = "hard"
+vim.g.gruvbox_material_ui_contrast = 'high'
 
 -- Definir a tecla de atalho com a leader e gg para abrir o Lazygit em fullscreen
 vim.api.nvim_set_keymap('n', '<Leader>gg', ':LazyGit<CR>', { noremap = true, silent = true })
