@@ -11,9 +11,7 @@ vim.cmd([[
   augroup end
 ]])
 
-local lsp = require('lsp-zero')
-
-lsp.preset('recommended')
+local lsp = require('lsp-zero').preset({})
 
 -- Fix Undefined global 'vim'
 lsp.configure('lua-language-server', {
@@ -26,11 +24,37 @@ lsp.configure('lua-language-server', {
     }
 })
 
+lsp.on_attach(function(client, bufnr)
+  lsp.default_keymaps({buffer = bufnr})
+end)
+
+lsp.format_on_save({
+  format_opts = {
+    timeout_ms = 10000,
+  },
+  servers = {
+    ['null-ls'] = {'javascript', 'javascriptreact', 'typescriptreact', 'typescript', 'lua'},
+  }
+})
+
 lsp.setup()
+
+local null_ls = require('null-ls')
+
+null_ls.setup({
+  sources = {
+    null_ls.builtins.formatting.prettier,
+  }
+})
 
 -- disable netrw at the very start of your init.lua (strongly advised)
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
+
+-- Ativar identação automática
+-- vim.o.autoindent = true
+-- Ativar identação automática inteligente
+-- vim.o.smartindent = true
 
 vim.o.expandtab = true
 vim.o.tabstop = 2

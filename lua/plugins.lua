@@ -16,6 +16,16 @@ return require('packer').startup(function(use)
   -- Discord Presence
   use 'andweeb/presence.nvim'
 
+  use {
+    'nvim-treesitter/nvim-treesitter',
+    run = ':TSUpdate'
+  }
+
+  use({
+    "jose-elias-alvarez/null-ls.nvim",
+    requires = { "nvim-lua/plenary.nvim" },
+})
+
   -- Telescope
   use {'nvim-telescope/telescope.nvim', tag = '0.1.1', requires = { {'nvim-lua/plenary.nvim'} }}
 
