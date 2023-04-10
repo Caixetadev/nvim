@@ -24,7 +24,9 @@ return require('packer').startup(function(use)
   use({
     "jose-elias-alvarez/null-ls.nvim",
     requires = { "nvim-lua/plenary.nvim" },
-})
+  })
+
+  use 'nvim-tree/nvim-web-devicons'
 
   -- Telescope
   use {'nvim-telescope/telescope.nvim', tag = '0.1.1', requires = { {'nvim-lua/plenary.nvim'} }}
