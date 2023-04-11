@@ -11,17 +11,17 @@ vim.cmd([[
   augroup end
 ]])
 
-local lsp = require('lsp-zero').preset({})
-
+local lsp = require('lsp-zero')
+lsp.preset('recommended')
 -- Fix Undefined global 'vim'
 lsp.configure('lua-language-server', {
-    settings = {
-        Lua = {
-            diagnostics = {
-                globals = { 'vim' }
-            }
-        }
+  settings = {
+    Lua = {
+      diagnostics = {
+        globals = { 'vim' }
+      }
     }
+  }
 })
 
 lsp.on_attach(function(client, bufnr)
@@ -68,14 +68,13 @@ local builtin = require('telescope.builtin')
 require('lualine').setup()
 
 -- Define keymap para abrir o find files
-vim.keymap.set('n', '<leader>pf', builtin.find_files, {})
+vim.keymap.set('n', '<leader>ff', builtin.find_files, {})
 -- Define keymap to open Git Files with leader+f
 vim.keymap.set('n', '<C-p>', builtin.git_files, {})
 -- Define keymap para abrir o grep e procurar uma palavra
-vim.keymap.set('n', '<leader>ps', function ()
-	builtin.grep_string({  search = vim.fn.input('Grep > ')});
-end)
-
+vim.keymap.set('n', '<leader>fg', builtin.live_grep)
+vim.keymap.set('n', '<leader>fb', builtin.buffers)
+vim.keymap.set('n', '<leader>fe', builtin.diagnostics)
 -- Ativa as linhas
 vim.wo.number = true
 
@@ -107,7 +106,7 @@ vim.opt.clipboard:append("unnamedplus")
 -- Buffers
 
 -- Abrir lista de buffer e escolher um
-vim.api.nvim_set_keymap('n', '<leader>bl', ':buffers<CR>:buffer<Space>', { noremap = true, silent = true })
+-- vim.api.nvim_set_keymap('n', '<leader>bl', ':buffers<CR>:buffer<Space>', { noremap = true, silent = true })
 
 -- Abrir lista de buffer e escolher um
 vim.api.nvim_set_keymap('n', '<leader>bd', ':bd<CR>', { noremap = true, silent = true })
@@ -123,3 +122,4 @@ vim.api.nvim_set_keymap('n', '<leader>bh', ':new<CR>', { noremap = true, silent 
 
 -- Abrir um novo buffer na vertical
 vim.api.nvim_set_keymap('n', '<leader>bv', ':vnew<CR>', { noremap = true, silent = true })
+
