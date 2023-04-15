@@ -39,6 +39,12 @@ lsp.format_on_save({
 
 lsp.setup()
 
+-- Configurações do "vim-go"
+vim.g.go_doc_popup_window = 1
+
+require("nvim-tree").setup()
+vim.cmd('nnoremap <leader>e :NvimTreeToggle<CR>')
+
 local null_ls = require('null-ls')
 
 null_ls.setup({
@@ -46,6 +52,12 @@ null_ls.setup({
     null_ls.builtins.formatting.prettier,
   }
 })
+
+vim.opt.mouse = nil
+
+vim.o.ignorecase = true
+
+vim.opt.hlsearch = false
 
 -- disable netrw at the very start of your init.lua (strongly advised)
 vim.g.loaded_netrw = 1
@@ -123,3 +135,19 @@ vim.api.nvim_set_keymap('n', '<leader>bh', ':new<CR>', { noremap = true, silent 
 -- Abrir um novo buffer na vertical
 vim.api.nvim_set_keymap('n', '<leader>bv', ':vnew<CR>', { noremap = true, silent = true })
 
+-- Splits
+
+-- Faz o buffer abrir na direita
+vim.o.splitright = true
+
+-- move-se para a janela à esquerda
+vim.api.nvim_set_keymap('n', '<C-h>', '<C-w>h', { noremap = true })
+
+-- move-se para a janela abaixo
+vim.api.nvim_set_keymap('n', '<C-j>', '<C-w>j', { noremap = true })
+
+-- move-se para a janela acima
+vim.api.nvim_set_keymap('n', '<C-k>', '<C-w>k', { noremap = true })
+
+-- move-se para a janela à direita
+vim.api.nvim_set_keymap('n', '<C-l>', '<C-w>l', { noremap = true })

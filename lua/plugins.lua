@@ -7,6 +7,8 @@ return require('packer').startup(function(use)
   -- Packer can manage itself
   use 'wbthomason/packer.nvim'
 
+  use 'styled-components/vim-styled-components'
+
   -- LazyGit
   use 'kdheepak/lazygit.nvim'
 
@@ -20,6 +22,12 @@ return require('packer').startup(function(use)
     'nvim-treesitter/nvim-treesitter',
     run = ':TSUpdate'
   }
+
+  use 'nvim-tree/nvim-tree.lua'
+
+  use 'sheerun/vim-polyglot'
+
+  use 'fatih/vim-go'
 
   use({
     "jose-elias-alvarez/null-ls.nvim",
@@ -81,5 +89,5 @@ return require('packer').startup(function(use)
 	  requires = { 'nvim-tree/nvim-web-devicons', opt = true }
   }
 
-  use "lukas-reineke/indent-blankline.nvim"
+--  use "lukas-reineke/indent-blankline.nvim"
 end)
