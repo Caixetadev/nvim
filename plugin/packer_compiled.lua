@@ -84,6 +84,11 @@ _G.packer_plugins = {
     path = "/home/caixeta/.local/share/nvim/site/pack/packer/start/ale",
     url = "https://github.com/dense-analysis/ale"
   },
+  ["alpha-nvim"] = {
+    loaded = true,
+    path = "/home/caixeta/.local/share/nvim/site/pack/packer/start/alpha-nvim",
+    url = "https://github.com/goolord/alpha-nvim"
+  },
   ["cmp-buffer"] = {
     loaded = true,
     path = "/home/caixeta/.local/share/nvim/site/pack/packer/start/cmp-buffer",

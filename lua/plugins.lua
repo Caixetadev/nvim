@@ -29,6 +29,8 @@ return require('packer').startup(function(use)
 
   use 'fatih/vim-go'
 
+  use 'goolord/alpha-nvim'
+
   use({
     "jose-elias-alvarez/null-ls.nvim",
     requires = { "nvim-lua/plenary.nvim" },
