@@ -74,7 +74,6 @@ vim.o.shiftwidth = 2
 vim.o.softtabstop = 2
 -- set termguicolors to enable highlight groups
 vim.opt.termguicolors = true
-vim.opt.guicursor = ""
 
 local builtin = require('telescope.builtin')
 
@@ -197,3 +196,19 @@ autocmd('BufUnload', {
 	  vim.opt.cmdheight = 1
   end,
   })
+
+require'cmp'.setup {
+  sources = {
+    { name = 'nvim_lsp', max_item_count = 11 },
+  }
+}
+
+-- aumenta a altura do split atual em 5 linhas
+vim.api.nvim_set_keymap('n', '+', ':resize +5<CR>', {noremap=true, silent=true})
+-- diminui a altura do split atual em 5 linhas
+vim.api.nvim_set_keymap('n', '_', ':resize -5<CR>', {noremap=true, silent=true})
+
+vim.api.nvim_set_keymap('n', '<M-+>', ':vertical resize +5<CR>', {noremap=true, silent=true})
+
+vim.api.nvim_set_keymap('n', '<M-_>', ':vertical resize -5<CR>', {noremap=true, silent=true})
+
