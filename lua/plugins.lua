@@ -9,6 +9,8 @@ return require('packer').startup(function(use)
 
   use 'styled-components/vim-styled-components'
 
+  use 'editorconfig/editorconfig-vim'
+
   -- LazyGit
   use 'kdheepak/lazygit.nvim'
 
