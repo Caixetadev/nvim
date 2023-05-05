@@ -24,6 +24,11 @@ lsp.configure('lua-language-server', {
   }
 })
 
+vim.cmd('colorscheme gruvbox-material')
+vim.g.gruvbox_material_ui_contrast = 'high'
+vim.g.gruvbox_material_background = "hard"
+vim.opt.background = 'dark'
+
 lsp.on_attach(function(client, bufnr)
   lsp.default_keymaps({buffer = bufnr})
 end)
@@ -41,6 +46,7 @@ lsp.setup()
 
 -- Configurações do "vim-go"
 vim.g.go_doc_popup_window = 1
+vim.api.nvim_command('autocmd FileType go setlocal syntax')
 
 require("nvim-tree").setup()
 vim.cmd('nnoremap <leader>e :NvimTreeToggle<CR>')
@@ -49,7 +55,7 @@ local null_ls = require('null-ls')
 
 null_ls.setup({
   sources = {
-    null_ls.builtins.formatting.prettier,
+    null_ls.builtins.formatting.prettierd,
   }
 })
 
@@ -102,15 +108,9 @@ vim.api.nvim_set_keymap('n', '<leader>q', ':wq<CR>', { noremap = true })
 -- Mapeia a combinação <leader>sv para dar um reload na config
 vim.api.nvim_set_keymap('n', '<leader>sv', ':source ~/.config/nvim/init.lua<CR>', { noremap = true })
 
--- Ativa o tema Gruvbox
-vim.cmd('colorscheme gruvbox-material')
-vim.g.gruvbox_material_background = "hard"
-vim.g.gruvbox_material_ui_contrast = 'high'
-
 -- Definir a tecla de atalho com a leader e gg para abrir o Lazygit em fullscreen
 vim.api.nvim_set_keymap('n', '<Leader>gg', ':LazyGit<CR>', { noremap = true, silent = true })
 
-vim.o.background = "dark" -- Define o modo de fundo do Neovim para escuro
 
 -- Esse comando permite que o Vim e o Neovim usem a área de transferência do sistema operacional para copiar e colar texto.
 vim.opt.clipboard:append("unnamedplus")
@@ -204,11 +204,19 @@ require'cmp'.setup {
 }
 
 -- aumenta a altura do split atual em 5 linhas
-vim.api.nvim_set_keymap('n', '+', ':resize +5<CR>', {noremap=true, silent=true})
+vim.api.nvim_set_keymap('n', '<M-+>', ':resize +5<CR>', {noremap=true, silent=true})
 -- diminui a altura do split atual em 5 linhas
-vim.api.nvim_set_keymap('n', '_', ':resize -5<CR>', {noremap=true, silent=true})
+vim.api.nvim_set_keymap('n', '<M-_>', ':resize -5<CR>', {noremap=true, silent=true})
 
-vim.api.nvim_set_keymap('n', '<M-+>', ':vertical resize +5<CR>', {noremap=true, silent=true})
+vim.api.nvim_set_keymap('n', '+', ':vertical resize +5<CR>', {noremap=true, silent=true})
 
-vim.api.nvim_set_keymap('n', '<M-_>', ':vertical resize -5<CR>', {noremap=true, silent=true})
+vim.api.nvim_set_keymap('n', '_', ':vertical resize -5<CR>', {noremap=true, silent=true})
 
+vim.api.nvim_set_keymap("n", "<leader>rn", "<cmd>lua vim.lsp.buf.rename()<CR>", { noremap = true })
+
+-- Ativa o tema Gruvbox
+require('guihua.maps').setup({
+  maps = {
+    close_view = '<C-x>',
+  }
+})

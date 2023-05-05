@@ -14,6 +14,19 @@ return require('packer').startup(function(use)
   -- LazyGit
   use 'kdheepak/lazygit.nvim'
 
+  use {
+    "Fildo7525/pretty_hover",
+    config = function()
+      require("pretty_hover").setup(options)
+    end
+  }
+
+  use 'tpope/vim-commentary'
+
+  use 'tpope/vim-surround'
+
+  use 'f-person/git-blame.nvim'
+
   -- Tema
   use 'sainnhe/gruvbox-material'
 
