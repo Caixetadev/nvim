@@ -7,19 +7,18 @@ return require('packer').startup(function(use)
   -- Packer can manage itself
   use 'wbthomason/packer.nvim'
 
+  use 'ray-x/go.nvim'
+  use 'neovim/nvim-lspconfig'
+  use 'windwp/nvim-ts-autotag'
+
   use 'styled-components/vim-styled-components'
+
+  use {'ray-x/guihua.lua', run = 'cd lua/fzy && make'}
 
   use 'editorconfig/editorconfig-vim'
 
   -- LazyGit
   use 'kdheepak/lazygit.nvim'
-
-  use {
-    "Fildo7525/pretty_hover",
-    config = function()
-      require("pretty_hover").setup(options)
-    end
-  }
 
   use 'tpope/vim-commentary'
 
@@ -41,8 +40,6 @@ return require('packer').startup(function(use)
   use 'nvim-tree/nvim-tree.lua'
 
   use 'sheerun/vim-polyglot'
-
-  use 'fatih/vim-go'
 
   use 'goolord/alpha-nvim'
 

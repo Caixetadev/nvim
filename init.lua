@@ -24,8 +24,16 @@ lsp.configure('lua-language-server', {
   }
 })
 
+require('go').setup()
+
+-- Ativa o tema Gruvbox
+require('guihua.maps').setup({
+  maps = {
+    close_view = '<C-x>',
+  }
+})
+
 vim.cmd('colorscheme gruvbox-material')
-vim.g.gruvbox_material_ui_contrast = 'high'
 vim.g.gruvbox_material_background = "hard"
 vim.opt.background = 'dark'
 
@@ -214,9 +222,3 @@ vim.api.nvim_set_keymap('n', '_', ':vertical resize -5<CR>', {noremap=true, sile
 
 vim.api.nvim_set_keymap("n", "<leader>rn", "<cmd>lua vim.lsp.buf.rename()<CR>", { noremap = true })
 
--- Ativa o tema Gruvbox
-require('guihua.maps').setup({
-  maps = {
-    close_view = '<C-x>',
-  }
-})

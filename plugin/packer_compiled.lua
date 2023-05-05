@@ -135,10 +135,20 @@ _G.packer_plugins = {
     path = "/home/caixeta/.local/share/nvim/site/pack/packer/start/gitsigns.nvim",
     url = "https://github.com/lewis6991/gitsigns.nvim"
   },
+  ["go.nvim"] = {
+    loaded = true,
+    path = "/home/caixeta/.local/share/nvim/site/pack/packer/start/go.nvim",
+    url = "https://github.com/ray-x/go.nvim"
+  },
   ["gruvbox-material"] = {
     loaded = true,
     path = "/home/caixeta/.local/share/nvim/site/pack/packer/start/gruvbox-material",
     url = "https://github.com/sainnhe/gruvbox-material"
+  },
+  ["guihua.lua"] = {
+    loaded = true,
+    path = "/home/caixeta/.local/share/nvim/site/pack/packer/start/guihua.lua",
+    url = "https://github.com/ray-x/guihua.lua"
   },
   ["lazygit.nvim"] = {
     loaded = true,
@@ -196,6 +206,11 @@ _G.packer_plugins = {
     path = "/home/caixeta/.local/share/nvim/site/pack/packer/start/nvim-treesitter",
     url = "https://github.com/nvim-treesitter/nvim-treesitter"
   },
+  ["nvim-ts-autotag"] = {
+    loaded = true,
+    path = "/home/caixeta/.local/share/nvim/site/pack/packer/start/nvim-ts-autotag",
+    url = "https://github.com/windwp/nvim-ts-autotag"
+  },
   ["nvim-web-devicons"] = {
     loaded = true,
     path = "/home/caixeta/.local/share/nvim/site/pack/packer/start/nvim-web-devicons",
@@ -216,12 +231,6 @@ _G.packer_plugins = {
     path = "/home/caixeta/.local/share/nvim/site/pack/packer/start/presence.nvim",
     url = "https://github.com/andweeb/presence.nvim"
   },
-  pretty_hover = {
-    config = { "\27LJ\2\nF\0\0\3\0\4\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0006\2\3\0B\0\2\1K\0\1\0\foptions\nsetup\17pretty_hover\frequire\0" },
-    loaded = true,
-    path = "/home/caixeta/.local/share/nvim/site/pack/packer/start/pretty_hover",
-    url = "https://github.com/Fildo7525/pretty_hover"
-  },
   ["telescope.nvim"] = {
     loaded = true,
     path = "/home/caixeta/.local/share/nvim/site/pack/packer/start/telescope.nvim",
@@ -236,11 +245,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/caixeta/.local/share/nvim/site/pack/packer/start/vim-commentary",
     url = "https://github.com/tpope/vim-commentary"
-  },
-  ["vim-go"] = {
-    loaded = true,
-    path = "/home/caixeta/.local/share/nvim/site/pack/packer/start/vim-go",
-    url = "https://github.com/fatih/vim-go"
   },
   ["vim-polyglot"] = {
     loaded = true,
@@ -269,10 +273,6 @@ time([[Defining packer_plugins]], false)
 time([[Config for gitsigns.nvim]], true)
 try_loadstring("\27LJ\2\n6\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\rgitsigns\frequire\0", "config", "gitsigns.nvim")
 time([[Config for gitsigns.nvim]], false)
--- Config for: pretty_hover
-time([[Config for pretty_hover]], true)
-try_loadstring("\27LJ\2\nF\0\0\3\0\4\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0006\2\3\0B\0\2\1K\0\1\0\foptions\nsetup\17pretty_hover\frequire\0", "config", "pretty_hover")
-time([[Config for pretty_hover]], false)
 -- Config for: nvim-autopairs
 time([[Config for nvim-autopairs]], true)
 try_loadstring("\27LJ\2\n@\0\0\3\0\3\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\1K\0\1\0\nsetup\19nvim-autopairs\frequire\0", "config", "nvim-autopairs")
