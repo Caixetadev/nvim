@@ -24,7 +24,7 @@ lsp.configure('lua-language-server', {
   }
 })
 
-require('go').setup()
+require('go').setup({linter = 'golangci-lint'})
 
 local format_sync_grp = vim.api.nvim_create_augroup("GoFormat", {})
 vim.api.nvim_create_autocmd("BufWritePre", {
@@ -60,10 +60,6 @@ lsp.format_on_save({
 })
 
 lsp.setup()
-
--- Configurações do "vim-go"
-vim.g.go_doc_popup_window = 1
-vim.api.nvim_command('autocmd FileType go setlocal syntax')
 
 require("nvim-tree").setup()
 vim.cmd('nnoremap <leader>e :NvimTreeToggle<CR>')
@@ -230,4 +226,3 @@ vim.api.nvim_set_keymap('n', '+', ':vertical resize +5<CR>', {noremap=true, sile
 vim.api.nvim_set_keymap('n', '_', ':vertical resize -5<CR>', {noremap=true, silent=true})
 
 vim.api.nvim_set_keymap("n", "<leader>rn", "<cmd>lua vim.lsp.buf.rename()<CR>", { noremap = true })
-

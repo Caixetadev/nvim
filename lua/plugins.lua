@@ -11,6 +11,8 @@ return require('packer').startup(function(use)
   use 'neovim/nvim-lspconfig'
   use 'windwp/nvim-ts-autotag'
 
+  use {"akinsho/toggleterm.nvim", tag = '*'}
+
   use {
     "olexsmir/gopher.nvim",
     requires = {
