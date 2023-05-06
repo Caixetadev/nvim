@@ -118,6 +118,8 @@ vim.api.nvim_set_keymap('n', '<leader>q', ':wq<CR>', { noremap = true })
 -- Mapeia a combinação <leader>sv para dar um reload na config
 vim.api.nvim_set_keymap('n', '<leader>sv', ':source ~/.config/nvim/init.lua<CR>', { noremap = true })
 
+vim.api.nvim_set_keymap('n', '<Leader>gg', ':LazyGit<CR>', { noremap = true, silent = true })
+
 vim.cmd('colorscheme gruvbox-material')
 vim.g.gruvbox_material_background = "hard"
 vim.opt.background = 'dark'

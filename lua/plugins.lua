@@ -41,6 +41,7 @@ return require('packer').startup(function(use)
     -- cmd = "packadd! gopher.nvim",
   }
 
+  use 'kdheepak/lazygit.nvim'
 
   use 'styled-components/vim-styled-components'
 
