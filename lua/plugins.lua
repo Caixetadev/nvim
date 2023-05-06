@@ -48,9 +48,6 @@ return require('packer').startup(function(use)
 
   use 'editorconfig/editorconfig-vim'
 
-  -- LazyGit
-  use 'kdheepak/lazygit.nvim'
-
   use 'tpope/vim-commentary'
 
   use 'tpope/vim-surround'
