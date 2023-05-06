@@ -24,7 +24,7 @@ lsp.configure('lua-language-server', {
   }
 })
 
-require('go').setup({linter = 'golangci-lint'})
+require('go').setup()
 
 local format_sync_grp = vim.api.nvim_create_augroup("GoFormat", {})
 vim.api.nvim_create_autocmd("BufWritePre", {
@@ -41,10 +41,6 @@ require('guihua.maps').setup({
     close_view = '<C-x>',
   }
 })
-
-vim.cmd('colorscheme gruvbox-material')
-vim.g.gruvbox_material_background = "hard"
-vim.opt.background = 'dark'
 
 lsp.on_attach(function(client, bufnr)
   lsp.default_keymaps({buffer = bufnr})
@@ -69,6 +65,7 @@ local null_ls = require('null-ls')
 null_ls.setup({
   sources = {
     null_ls.builtins.formatting.prettierd,
+    null_ls.builtins.diagnostics.golangci_lint,
   }
 })
 
@@ -121,9 +118,9 @@ vim.api.nvim_set_keymap('n', '<leader>q', ':wq<CR>', { noremap = true })
 -- Mapeia a combinação <leader>sv para dar um reload na config
 vim.api.nvim_set_keymap('n', '<leader>sv', ':source ~/.config/nvim/init.lua<CR>', { noremap = true })
 
--- Definir a tecla de atalho com a leader e gg para abrir o Lazygit em fullscreen
-vim.api.nvim_set_keymap('n', '<Leader>gg', ':LazyGit<CR>', { noremap = true, silent = true })
-
+vim.cmd('colorscheme gruvbox-material')
+vim.g.gruvbox_material_background = "hard"
+vim.opt.background = 'dark'
 
 -- Esse comando permite que o Vim e o Neovim usem a área de transferência do sistema operacional para copiar e colar texto.
 vim.opt.clipboard:append("unnamedplus")
