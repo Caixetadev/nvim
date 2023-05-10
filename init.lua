@@ -17,6 +17,7 @@ vim.api.nvim_create_autocmd("FileType", {
   end,
 })
 
+
 require("mini.indentscope").setup {
   symbol = "│",
   options = { try_as_border = true },
@@ -29,11 +30,36 @@ require("indent_blankline").setup {
   filetype_exclude = {"alpha", "NvimTree"}
 }
 
-require("illuminate").configure({
+local illuminate = require("illuminate")
+
+illuminate.configure({
   filetypes_denylist = {
     "alpha", "NvimTree"
   },
 })
+
+local function map(key, dir, buffer)
+  vim.keymap.set("n", key, function()
+    illuminate["goto_" .. dir .. "_reference"](false)
+  end, { desc = dir:sub(1, 1):upper() .. dir:sub(2) .. " Reference", buffer = buffer })
+end
+
+map("]]", "next")
+map("[[", "prev")
+
+vim.api.nvim_create_autocmd("FileType", {
+  callback = function()
+    local buffer = vim.api.nvim_get_current_buf()
+    map("]]", "next", buffer)
+    map("[[", "prev", buffer)
+  end,
+})
+
+-- require("illuminate").configure({
+--   filetypes_denylist = {
+--     "alpha", "NvimTree"
+--   },
+-- })
 
 local lsp = require('lsp-zero')
 lsp.preset('recommended')
@@ -57,7 +83,9 @@ vim.api.nvim_create_autocmd("BufWritePre", {
   group = format_sync_grp,
 })
 
--- Ativa o tema Gruvbox
+vim.cmd('colorscheme gruvbox-material')
+vim.g.gruvbox_material_background = "hard"
+vim.opt.background = 'dark'
 require('guihua.maps').setup({
   maps = {
     close_view = '<C-x>',
@@ -142,9 +170,6 @@ vim.api.nvim_set_keymap('n', '<leader>sv', ':source ~/.config/nvim/init.lua<CR>'
 
 vim.api.nvim_set_keymap('n', '<Leader>gg', ':LazyGit<CR>', { noremap = true, silent = true })
 
-vim.cmd('colorscheme gruvbox-material')
-vim.g.gruvbox_material_background = "hard"
-vim.opt.background = 'dark'
 
 -- Esse comando permite que o Vim e o Neovim usem a área de transferência do sistema operacional para copiar e colar texto.
 vim.opt.clipboard:append("unnamedplus")
@@ -231,11 +256,11 @@ autocmd('BufUnload', {
   end,
   })
 
-require'cmp'.setup {
-  sources = {
-    { name = 'nvim_lsp', max_item_count = 11 },
-  }
-}
+-- require'cmp'.setup {
+--   sources = {
+--     { name = 'nvim_lsp', max_item_count = 11 },
+--   }
+-- }
 
 -- aumenta a altura do split atual em 5 linhas
 vim.api.nvim_set_keymap('n', '<M-+>', ':resize +5<CR>', {noremap=true, silent=true})

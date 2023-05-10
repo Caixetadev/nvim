@@ -16,7 +16,7 @@ return require('packer').startup(function(use)
 
   use "lukas-reineke/indent-blankline.nvim"
 
-  use 'RRethy/vim-illuminate'
+  use "RRethy/vim-illuminate"
 
   use "echasnovski/mini.indentscope" 
 
