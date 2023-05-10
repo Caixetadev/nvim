@@ -222,3 +222,15 @@ vim.api.nvim_set_keymap('n', '+', ':vertical resize +5<CR>', {noremap=true, sile
 vim.api.nvim_set_keymap('n', '_', ':vertical resize -5<CR>', {noremap=true, silent=true})
 
 vim.api.nvim_set_keymap("n", "<leader>rn", "<cmd>lua vim.lsp.buf.rename()<CR>", { noremap = true })
+
+
+vim.opt.list = true
+vim.opt.listchars:append "space:⋅"
+vim.opt.listchars:append "eol:↴"
+
+require("indent_blankline").setup {
+  char = "│",
+  filetype_exclude = { "help", "alpha", "dashboard", "neo-tree", "Trouble", "lazy" },
+  show_trailing_blankline_indent = false,
+  show_current_context = false,
+}

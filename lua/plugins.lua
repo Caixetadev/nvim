@@ -14,7 +14,24 @@ return require('packer').startup(function(use)
   use 'folke/trouble.nvim'
   use {"akinsho/toggleterm.nvim", tag = '*'}
 
-  use "sainnhe/gruvbox-material"
+  use 'lukas-reineke/indent-blankline.nvim'
+
+  use {
+    "echasnovski/mini.indentscope",
+    config = function()
+      require("mini.indentscope").setup {
+        -- symbol = "▏",
+        symbol = "│",
+        options = { try_as_border = true },
+      }
+
+      -- Desativa o mini.indentscope em determinados filetypes
+      vim.api.nvim_command([[
+            autocmd FileType help,alpha,dashboard,neo-tree,Trouble,lazy,mason
+            let b:miniindentscope_disable = 1
+            ]])
+    end
+  }
 
   use {
     "olexsmir/gopher.nvim",
