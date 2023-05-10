@@ -1,5 +1,4 @@
 require('plugins')
-
 -- Define a tecla de espaço como líder
 vim.g.mapleader = " "
 
@@ -23,8 +22,6 @@ lsp.configure('lua-language-server', {
     }
   }
 })
-
-require('go').setup()
 
 local format_sync_grp = vim.api.nvim_create_augroup("GoFormat", {})
 vim.api.nvim_create_autocmd("BufWritePre", {

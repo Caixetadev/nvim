@@ -3,9 +3,6 @@
 -- Only required if you have packer configured as `opt`
 vim.cmd [[packadd packer.nvim]]
 
-
-
-
 return require('packer').startup(function(use)
   -- Packer can manage itself
   use 'wbthomason/packer.nvim'
@@ -14,7 +11,10 @@ return require('packer').startup(function(use)
   use 'neovim/nvim-lspconfig'
   use 'windwp/nvim-ts-autotag'
 
+  use 'folke/trouble.nvim'
   use {"akinsho/toggleterm.nvim", tag = '*'}
+
+  use "sainnhe/gruvbox-material"
 
   use {
     "olexsmir/gopher.nvim",
@@ -98,9 +98,6 @@ return require('packer').startup(function(use)
       require('gitsigns').setup()
     end
   }
-
-  -- Linter
-  use 'dense-analysis/ale'
 
   use {
 	  'VonHeikemen/lsp-zero.nvim',
