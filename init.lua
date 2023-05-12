@@ -256,11 +256,22 @@ autocmd('BufUnload', {
   end,
   })
 
--- require'cmp'.setup {
---   sources = {
---     { name = 'nvim_lsp', max_item_count = 11 },
---   }
--- }
+require'cmp'.setup {
+  sources = {
+  {name = "nvim_lsp",
+    priority = 10,
+    keyword_length = 3,
+    group_index = 1,
+    max_item_count = 30,}
+  },
+  performance = {
+    trigger_debounce_time = 500,
+    throttle = 550,
+    fetching_timeout = 80,
+  },
+}
+
+vim.keymap.set("i", "<Tab>", [[pumvisible() ? (complete_info().selected == -1 ? "<C-e><Tab>" : "<C-y>") : "<TAB>"]], {silent = true})
 
 -- aumenta a altura do split atual em 5 linhas
 vim.api.nvim_set_keymap('n', '<M-+>', ':resize +5<CR>', {noremap=true, silent=true})

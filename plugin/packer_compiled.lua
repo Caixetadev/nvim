@@ -136,7 +136,7 @@ _G.packer_plugins = {
     url = "https://github.com/ray-x/go.nvim"
   },
   ["gopher.nvim"] = {
-    config = { "\27LJ\2\n°\1\0\0\5\0\6\0\t6\0\0\0'\2\1\0B\0\2\0029\1\2\0005\3\4\0005\4\3\0=\4\5\3B\1\2\1K\0\1\0\rcommands\1\0\2\rgoimport\ngopls\ngofmt\ngopls\1\0\5\niferr\niferr\timpl\timpl\fgotests\fgotests\17gomodifytags\17gomodifytags\ago\ago\nsetup\vgopher\frequire\0" },
+    config = { "\27LJ\2\n°\1\0\0\5\0\6\0\t6\0\0\0'\2\1\0B\0\2\0029\1\2\0005\3\4\0005\4\3\0=\4\5\3B\1\2\1K\0\1\0\rcommands\1\0\2\ngofmt\ngopls\rgoimport\ngopls\1\0\5\niferr\niferr\timpl\timpl\fgotests\fgotests\ago\ago\17gomodifytags\17gomodifytags\nsetup\vgopher\frequire\0" },
     loaded = true,
     path = "/home/caixeta/.local/share/nvim/site/pack/packer/start/gopher.nvim",
     url = "https://github.com/olexsmir/gopher.nvim"
@@ -300,6 +300,10 @@ _G.packer_plugins = {
 }
 
 time([[Defining packer_plugins]], false)
+-- Config for: gopher.nvim
+time([[Config for gopher.nvim]], true)
+try_loadstring("\27LJ\2\n°\1\0\0\5\0\6\0\t6\0\0\0'\2\1\0B\0\2\0029\1\2\0005\3\4\0005\4\3\0=\4\5\3B\1\2\1K\0\1\0\rcommands\1\0\2\ngofmt\ngopls\rgoimport\ngopls\1\0\5\niferr\niferr\timpl\timpl\fgotests\fgotests\ago\ago\17gomodifytags\17gomodifytags\nsetup\vgopher\frequire\0", "config", "gopher.nvim")
+time([[Config for gopher.nvim]], false)
 -- Config for: gitsigns.nvim
 time([[Config for gitsigns.nvim]], true)
 try_loadstring("\27LJ\2\n6\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\rgitsigns\frequire\0", "config", "gitsigns.nvim")
@@ -308,10 +312,6 @@ time([[Config for gitsigns.nvim]], false)
 time([[Config for nvim-autopairs]], true)
 try_loadstring("\27LJ\2\n@\0\0\3\0\3\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\1K\0\1\0\nsetup\19nvim-autopairs\frequire\0", "config", "nvim-autopairs")
 time([[Config for nvim-autopairs]], false)
--- Config for: gopher.nvim
-time([[Config for gopher.nvim]], true)
-try_loadstring("\27LJ\2\n°\1\0\0\5\0\6\0\t6\0\0\0'\2\1\0B\0\2\0029\1\2\0005\3\4\0005\4\3\0=\4\5\3B\1\2\1K\0\1\0\rcommands\1\0\2\rgoimport\ngopls\ngofmt\ngopls\1\0\5\niferr\niferr\timpl\timpl\fgotests\fgotests\17gomodifytags\17gomodifytags\ago\ago\nsetup\vgopher\frequire\0", "config", "gopher.nvim")
-time([[Config for gopher.nvim]], false)
 
 _G._packer.inside_compile = false
 if _G._packer.needs_bufread == true then
