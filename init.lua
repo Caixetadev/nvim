@@ -260,9 +260,14 @@ require'cmp'.setup {
   sources = {
   {name = "nvim_lsp",
     priority = 10,
-    keyword_length = 3,
+    keyword_length = 2,
     group_index = 1,
     max_item_count = 30,}
+  },
+  completion = {
+    keyword_length = 1,
+    keyword_pattern = [[\k\+]],
+    map_select = false,
   },
   performance = {
     trigger_debounce_time = 500,
