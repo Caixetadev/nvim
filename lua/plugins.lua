@@ -14,6 +14,14 @@ return require('packer').startup(function(use)
   use 'folke/trouble.nvim'
   use {"akinsho/toggleterm.nvim", tag = '*'}
 
+  use {
+    "folke/todo-comments.nvim",
+    requires = "nvim-lua/plenary.nvim",
+    config = function()
+      require("todo-comments").setup {}
+    end
+  }
+
   use "lukas-reineke/indent-blankline.nvim"
 
   use "RRethy/vim-illuminate"
@@ -67,7 +75,8 @@ return require('packer').startup(function(use)
       vim.cmd('colorscheme gruvbox-material')
       vim.g.gruvbox_material_background = "hard"
       vim.opt.background = 'dark'
-    end}
+    end
+  }
 
   -- Discord Presence
   use 'andweeb/presence.nvim'
