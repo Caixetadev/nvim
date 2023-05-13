@@ -17,11 +17,13 @@ vim.api.nvim_create_autocmd("FileType", {
   end,
 })
 
-
 require("mini.indentscope").setup {
   symbol = "│",
   options = { try_as_border = true },
 }
+
+vim.api.nvim_set_keymap('n', 'j', 'jzz', { noremap = true })
+vim.api.nvim_set_keymap('n', 'k', 'kzz', { noremap = true })
 
 require("indent_blankline").setup {
   char = "│",
@@ -83,9 +85,6 @@ vim.api.nvim_create_autocmd("BufWritePre", {
   group = format_sync_grp,
 })
 
-vim.cmd('colorscheme gruvbox-material')
-vim.g.gruvbox_material_background = "hard"
-vim.opt.background = 'dark'
 require('guihua.maps').setup({
   maps = {
     close_view = '<C-x>',
@@ -288,3 +287,4 @@ vim.api.nvim_set_keymap('n', '+', ':vertical resize +5<CR>', {noremap=true, sile
 vim.api.nvim_set_keymap('n', '_', ':vertical resize -5<CR>', {noremap=true, silent=true})
 
 vim.api.nvim_set_keymap("n", "<leader>rn", "<cmd>lua vim.lsp.buf.rename()<CR>", { noremap = true })
+

@@ -18,8 +18,7 @@ return require('packer').startup(function(use)
 
   use "RRethy/vim-illuminate"
 
-  use "echasnovski/mini.indentscope" 
-
+  use "echasnovski/mini.indentscope"
   use {
     "olexsmir/gopher.nvim",
     requires = {
@@ -63,7 +62,12 @@ return require('packer').startup(function(use)
   use 'f-person/git-blame.nvim'
 
   -- Tema
-  use 'sainnhe/gruvbox-material'
+  use {'sainnhe/gruvbox-material', 
+    config = function ()
+      vim.cmd('colorscheme gruvbox-material')
+      vim.g.gruvbox_material_background = "hard"
+      vim.opt.background = 'dark'
+    end}
 
   -- Discord Presence
   use 'andweeb/presence.nvim'
