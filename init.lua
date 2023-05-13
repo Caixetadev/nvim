@@ -65,8 +65,9 @@ vim.api.nvim_create_autocmd("FileType", {
 
 local lsp = require('lsp-zero')
 lsp.preset('recommended')
+
 -- Fix Undefined global 'vim'
-lsp.configure('lua-language-server', {
+lsp.configure('lua_ls', {
   settings = {
     Lua = {
       diagnostics = {
