@@ -22,6 +22,10 @@ require("mini.indentscope").setup {
   options = { try_as_border = true },
 }
 
+vim.keymap.set("n", "<C-s>", require("auto-session.session-lens").search_session, {
+  noremap = true,
+})
+
 vim.api.nvim_set_keymap('n', 'j', 'jzz', { noremap = true })
 vim.api.nvim_set_keymap('n', 'k', 'kzz', { noremap = true })
 
