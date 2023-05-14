@@ -147,7 +147,12 @@ vim.opt.termguicolors = true
 
 local builtin = require('telescope.builtin')
 
-require('lualine').setup()
+require('lualine').setup{
+  options = {
+    theme = 'auto',
+  },
+  sections = {lualine_c = {require('auto-session.lib').current_session_name}}
+}
 
 -- Define keymap para abrir o find files
 vim.keymap.set('n', '<leader>ff', builtin.find_files, {})
@@ -246,21 +251,23 @@ autocmd('User', {
   pattern = 'AlphaReady',
   desc = 'disable status, tabline and cmdline for alpha',
   callback = function()
-	  vim.go.laststatus = 0
-          vim.opt.showtabline = 0
-	  vim.opt.cmdheight = 0
+    vim.go.laststatus = 0
+    vim.opt.showtabline = 0
+    vim.opt.cmdheight = 0
   end,
-  })
+})
 autocmd('BufUnload', {
   buffer = 0,
   desc = 'enable status, tabline and cmdline after alpha',
   callback = function()
-          vim.go.laststatus = 2
-	  vim.opt.cmdheight = 1
+    vim.go.laststatus = 2
+    vim.opt.cmdheight = 1
   end,
-  })
+})
 
-require'cmp'.setup {
+local cmp = require("cmp")
+
+cmp.setup {
   sources = {
   {name = "nvim_lsp",
     priority = 10,
@@ -268,6 +275,13 @@ require'cmp'.setup {
     group_index = 1,
     max_item_count = 30,}
   },
+  mapping = cmp.mapping.preset.insert({
+    ['<C-b>'] = cmp.mapping.scroll_docs(-4),
+    ['<C-f>'] = cmp.mapping.scroll_docs(4),
+    ['<C-Space>'] = cmp.mapping.complete(),
+    ['<C-e>'] = cmp.mapping.abort(),
+    ['<CR>'] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
+  }),
   completion = {
     keyword_length = 1,
     keyword_pattern = [[\k\+]],
@@ -279,9 +293,6 @@ require'cmp'.setup {
     fetching_timeout = 80,
   },
 }
-
-vim.keymap.set("i", "<Tab>", [[pumvisible() ? (complete_info().selected == -1 ? "<C-e><Tab>" : "<C-y>") : "<TAB>"]], {silent = true})
-
 -- aumenta a altura do split atual em 5 linhas
 vim.api.nvim_set_keymap('n', '<M-+>', ':resize +5<CR>', {noremap=true, silent=true})
 -- diminui a altura do split atual em 5 linhas
