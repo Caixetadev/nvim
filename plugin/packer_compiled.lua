@@ -142,7 +142,7 @@ _G.packer_plugins = {
     url = "https://github.com/ray-x/go.nvim"
   },
   ["gopher.nvim"] = {
-    config = { "\27LJ\2\n°\1\0\0\5\0\6\0\t6\0\0\0'\2\1\0B\0\2\0029\1\2\0005\3\4\0005\4\3\0=\4\5\3B\1\2\1K\0\1\0\rcommands\1\0\2\ngofmt\ngopls\rgoimport\ngopls\1\0\5\ago\ago\niferr\niferr\timpl\timpl\fgotests\fgotests\17gomodifytags\17gomodifytags\nsetup\vgopher\frequire\0" },
+    config = { "\27LJ\2\n°\1\0\0\5\0\6\0\t6\0\0\0'\2\1\0B\0\2\0029\1\2\0005\3\4\0005\4\3\0=\4\5\3B\1\2\1K\0\1\0\rcommands\1\0\2\rgoimport\ngopls\ngofmt\ngopls\1\0\5\timpl\timpl\fgotests\fgotests\17gomodifytags\17gomodifytags\niferr\niferr\ago\ago\nsetup\vgopher\frequire\0" },
     loaded = true,
     path = "/home/caixeta/.local/share/nvim/site/pack/packer/start/gopher.nvim",
     url = "https://github.com/olexsmir/gopher.nvim"
@@ -317,17 +317,17 @@ time([[Defining packer_plugins]], false)
 time([[Config for gruvbox-material]], true)
 try_loadstring("\27LJ\2\n—\1\0\0\3\0\t\0\r6\0\0\0009\0\1\0'\2\2\0B\0\2\0016\0\0\0009\0\3\0'\1\5\0=\1\4\0006\0\0\0009\0\6\0'\1\b\0=\1\a\0K\0\1\0\tdark\15background\bopt\thard gruvbox_material_background\6g!colorscheme gruvbox-material\bcmd\bvim\0", "config", "gruvbox-material")
 time([[Config for gruvbox-material]], false)
--- Config for: todo-comments.nvim
-time([[Config for todo-comments.nvim]], true)
-try_loadstring("\27LJ\2\n?\0\0\3\0\3\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\1K\0\1\0\nsetup\18todo-comments\frequire\0", "config", "todo-comments.nvim")
-time([[Config for todo-comments.nvim]], false)
 -- Config for: nvim-autopairs
 time([[Config for nvim-autopairs]], true)
 try_loadstring("\27LJ\2\n@\0\0\3\0\3\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\1K\0\1\0\nsetup\19nvim-autopairs\frequire\0", "config", "nvim-autopairs")
 time([[Config for nvim-autopairs]], false)
+-- Config for: todo-comments.nvim
+time([[Config for todo-comments.nvim]], true)
+try_loadstring("\27LJ\2\n?\0\0\3\0\3\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\1K\0\1\0\nsetup\18todo-comments\frequire\0", "config", "todo-comments.nvim")
+time([[Config for todo-comments.nvim]], false)
 -- Config for: gopher.nvim
 time([[Config for gopher.nvim]], true)
-try_loadstring("\27LJ\2\n°\1\0\0\5\0\6\0\t6\0\0\0'\2\1\0B\0\2\0029\1\2\0005\3\4\0005\4\3\0=\4\5\3B\1\2\1K\0\1\0\rcommands\1\0\2\ngofmt\ngopls\rgoimport\ngopls\1\0\5\ago\ago\niferr\niferr\timpl\timpl\fgotests\fgotests\17gomodifytags\17gomodifytags\nsetup\vgopher\frequire\0", "config", "gopher.nvim")
+try_loadstring("\27LJ\2\n°\1\0\0\5\0\6\0\t6\0\0\0'\2\1\0B\0\2\0029\1\2\0005\3\4\0005\4\3\0=\4\5\3B\1\2\1K\0\1\0\rcommands\1\0\2\rgoimport\ngopls\ngofmt\ngopls\1\0\5\timpl\timpl\fgotests\fgotests\17gomodifytags\17gomodifytags\niferr\niferr\ago\ago\nsetup\vgopher\frequire\0", "config", "gopher.nvim")
 time([[Config for gopher.nvim]], false)
 -- Config for: gitsigns.nvim
 time([[Config for gitsigns.nvim]], true)

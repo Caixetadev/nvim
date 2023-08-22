@@ -271,7 +271,7 @@ cmp.setup {
   sources = {
   {name = "nvim_lsp",
     priority = 10,
-    keyword_length = 2,
+    -- keyword_length = 2,
     group_index = 1,
     max_item_count = 30,}
   },
@@ -282,11 +282,24 @@ cmp.setup {
     ['<C-e>'] = cmp.mapping.abort(),
     ['<CR>'] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
   }),
+  -- completion = {
+  --   keyword_length = 1,
+  --   keyword_pattern = [[\k\+]],
+  --   map_select = false,
+  -- },
+
   completion = {
-    keyword_length = 1,
-    keyword_pattern = [[\k\+]],
-    map_select = false,
+    get_trigger_characters = function(chars)
+      local new_chars = {}
+      for _, char in ipairs(chars) do
+        if char ~= ' ' then
+          table.insert(new_chars, char)
+        end
+      end
+      return new_chars
+    end
   },
+
   performance = {
     trigger_debounce_time = 500,
     throttle = 550,
