@@ -179,6 +179,7 @@ vim.api.nvim_set_keymap('n', '<leader>sv', ':source ~/.config/nvim/init.lua<CR>'
 
 vim.api.nvim_set_keymap('n', '<Leader>gg', ':LazyGit<CR>', { noremap = true, silent = true })
 
+vim.keymap.set("x", "<leader>p", function() return 'pgv"' .. vim.v.register .. "y" end, { remap = false, expr = true })
 
 -- Esse comando permite que o Vim e o Neovim usem a área de transferência do sistema operacional para copiar e colar texto.
 vim.opt.clipboard:append("unnamedplus")
