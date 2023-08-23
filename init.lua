@@ -26,8 +26,8 @@ vim.keymap.set("n", "<C-s>", require("auto-session.session-lens").search_session
   noremap = true,
 })
 
-vim.api.nvim_set_keymap('n', 'j', 'jzz', { noremap = true })
-vim.api.nvim_set_keymap('n', 'k', 'kzz', { noremap = true })
+-- vim.api.nvim_set_keymap('n', 'j', 'jzz', { noremap = true })
+-- vim.api.nvim_set_keymap('n', 'k', 'kzz', { noremap = true })
 
 require("indent_blankline").setup {
   char = "│",
@@ -85,7 +85,7 @@ local format_sync_grp = vim.api.nvim_create_augroup("GoFormat", {})
 vim.api.nvim_create_autocmd("BufWritePre", {
   pattern = "*.go",
   callback = function()
-   require('go.format').goimport()
+   require('go.format').gofmt()
   end,
   group = format_sync_grp,
 })
