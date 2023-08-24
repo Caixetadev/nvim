@@ -1,7 +1,7 @@
 require("toggleterm").setup{
   size = 80,
-  open_mapping = [[\\]],
-  direction = 'vertical' ,
+  open_mapping = [[<c-\>]],
+  direction = 'float' ,
 }
 
 function _G.set_terminal_keymaps()

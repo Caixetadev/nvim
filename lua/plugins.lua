@@ -88,17 +88,38 @@ return require('packer').startup(function(use)
 
   use 'f-person/git-blame.nvim'
 
-  -- Tema
-  use {'sainnhe/gruvbox-material', 
-    config = function ()
-      vim.cmd('colorscheme gruvbox-material')
-      vim.g.gruvbox_material_background = "hard"
-      vim.opt.background = 'dark'
+  use {
+    'xiyaowong/transparent.nvim',
+    config = function()
+      require('transparent').setup({
+        extra_groups = {
+          "NormalFloat", -- plugins which have float panel such as Lazy, Mason, LspInfo
+          "NvimTreeNormal", -- NvimTree
+          "toggleterm" -- NvimTree
+        },
+      })
     end
   }
 
+  use {
+    "mcchrish/zenbones.nvim",
+    -- Optionally install Lush. Allows for more configuration or extending the colorscheme
+    -- If you don't want to install lush, make sure to set g:zenbones_compat = 1
+    -- In Vim, compat mode is turned on as Lush only works in Neovim.
+    requires = "rktjmp/lush.nvim"
+  }
+
+  -- Tema
+  -- use {'sainnhe/gruvbox-material', 
+  --   config = function ()
+  --     vim.cmd('colorscheme gruvbox-material')
+  --     vim.g.gruvbox_material_background = "hard"
+  --     vim.opt.background = 'dark'
+  --   end
+  -- }
+
   -- Discord Presence
-  use 'andweeb/presence.nvim'
+  -- use 'andweeb/presence.nvim'
 
   use {
     'nvim-treesitter/nvim-treesitter',

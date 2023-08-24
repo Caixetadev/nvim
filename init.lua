@@ -53,6 +53,8 @@ end
 map("]]", "next")
 map("[[", "prev")
 
+vim.cmd('colorscheme zenbones')
+
 vim.api.nvim_create_autocmd("FileType", {
   callback = function()
     local buffer = vim.api.nvim_get_current_buf()
