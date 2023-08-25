@@ -83,6 +83,24 @@ lsp.configure('lua_ls', {
   }
 })
 
+lsp.ensure_installed({
+  'tsserver',
+  'bashls',
+  'cssls',
+  'dockerls',
+  'emmet_ls',
+  'golangci_lint_ls',
+  'gopls',
+  'grammarly',
+  'html',
+  'jsonls',
+  'lua_ls',
+  'prismals',
+  'tailwindcss',
+  'taplo',
+  'yamlls'
+})
+
 local format_sync_grp = vim.api.nvim_create_augroup("GoFormat", {})
 vim.api.nvim_create_autocmd("BufWritePre", {
   pattern = "*.go",
