@@ -286,47 +286,6 @@ autocmd('BufUnload', {
   end,
 })
 
-local cmp = require("cmp")
-
-cmp.setup {
-  sources = {
-  {name = "nvim_lsp",
-    priority = 10,
-    -- keyword_length = 2,
-    group_index = 1,
-    max_item_count = 30,}
-  },
-  mapping = cmp.mapping.preset.insert({
-    ['<C-b>'] = cmp.mapping.scroll_docs(-4),
-    ['<C-f>'] = cmp.mapping.scroll_docs(4),
-    ['<C-Space>'] = cmp.mapping.complete(),
-    ['<C-e>'] = cmp.mapping.abort(),
-    ['<CR>'] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
-  }),
-  -- completion = {
-  --   keyword_length = 1,
-  --   keyword_pattern = [[\k\+]],
-  --   map_select = false,
-  -- },
-
-  completion = {
-    get_trigger_characters = function(chars)
-      local new_chars = {}
-      for _, char in ipairs(chars) do
-        if char ~= ' ' then
-          table.insert(new_chars, char)
-        end
-      end
-      return new_chars
-    end
-  },
-
-  performance = {
-    trigger_debounce_time = 500,
-    throttle = 550,
-    fetching_timeout = 80,
-  },
-}
 -- aumenta a altura do split atual em 5 linhas
 vim.api.nvim_set_keymap('n', '<M-+>', ':resize +5<CR>', {noremap=true, silent=true})
 -- diminui a altura do split atual em 5 linhas
