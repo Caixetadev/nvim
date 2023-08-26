@@ -28,13 +28,10 @@ nvim_lsp.tailwindcss.setup {
 }
 
 cmp.setup {
-  -- sources = {
-  -- {name = "nvim_lsp",
-  --   priority = 10,
-  --   -- keyword_length = 2,
-  --   group_index = 1,
-  --   max_item_count = 30,
-  -- },
+  sources = cmp.config.sources({
+    { name = 'nvim_lsp' },
+    { name = 'buffer' },
+  }),
   mapping = cmp.mapping.preset.insert({
     ['<C-b>'] = cmp.mapping.scroll_docs(-4),
     ['<C-f>'] = cmp.mapping.scroll_docs(4),
@@ -48,17 +45,17 @@ cmp.setup {
   --   map_select = false,
   -- },
 
-  -- completion = {
-  --   get_trigger_characters = function(chars)
-  --     local new_chars = {}
-  --     for _, char in ipairs(chars) do
-  --       if char ~= ' ' then
-  --         table.insert(new_chars, char)
-  --       end
-  --     end
-  --     return new_chars
-  --   end
-  -- },
+  completion = {
+    get_trigger_characters = function(chars)
+      local new_chars = {}
+      for _, char in ipairs(chars) do
+        if char ~= ' ' then
+          table.insert(new_chars, char)
+        end
+      end
+      return new_chars
+    end
+  },
 
   -- performance = {
     -- trigger_debounce_time = 0,
