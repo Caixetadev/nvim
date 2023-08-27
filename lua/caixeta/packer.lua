@@ -43,11 +43,30 @@ return require('packer').startup(function(use)
     end
   }
 
-  use "lukas-reineke/indent-blankline.nvim"
+  use {
+    "lukas-reineke/indent-blankline.nvim",
+    config = function ()
+      require("indent_blankline").setup {
+        char = "│",
+        show_trailing_blankline_indent = false,
+        show_current_context = false,
+        filetype_exclude = {"alpha", "NvimTree"}
+      }
+    end
+  }
 
   use "RRethy/vim-illuminate"
 
-  use "echasnovski/mini.indentscope"
+  use {
+    "echasnovski/mini.indentscope",
+    config = function ()
+      require("mini.indentscope").setup {
+        symbol = "│",
+        options = { try_as_border = true },
+      }
+    end
+  }
+
   use {
     "olexsmir/gopher.nvim",
     requires = {
@@ -97,7 +116,6 @@ return require('packer').startup(function(use)
         extra_groups = {
           "NormalFloat", -- plugins which have float panel such as Lazy, Mason, LspInfo
           "NvimTreeNormal", -- NvimTree
-          "toggleterm" -- NvimTree
         },
       })
     end
@@ -128,7 +146,13 @@ return require('packer').startup(function(use)
     run = ':TSUpdate'
   }
 
-  use 'nvim-tree/nvim-tree.lua'
+  use {
+    'nvim-tree/nvim-tree.lua',
+    config = function ()
+      require("nvim-tree").setup()
+      vim.cmd('nnoremap <leader>e :NvimTreeToggle<CR>')
+    end
+  }
 
   use 'sheerun/vim-polyglot'
 
@@ -187,8 +211,16 @@ return require('packer').startup(function(use)
   }
 
   use {
-	  'nvim-lualine/lualine.nvim',
-	  requires = { 'nvim-tree/nvim-web-devicons', opt = true }
+    'nvim-lualine/lualine.nvim',
+    requires = { 'nvim-tree/nvim-web-devicons', opt = true },
+    config = function ()
+      require('lualine').setup{
+        options = {
+          theme = 'auto',
+        },
+        sections = {lualine_c = {require('auto-session.lib').current_session_name}}
+      }
+    end
   }
 
 --  use "lukas-reineke/indent-blankline.nvim"
