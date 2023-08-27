@@ -53,7 +53,7 @@ end
 map("]]", "next")
 map("[[", "prev")
 
-vim.cmd('colorscheme zenbones')
+vim.cmd('colorscheme onedark')
 
 vim.api.nvim_create_autocmd("FileType", {
   callback = function()
@@ -297,3 +297,5 @@ vim.api.nvim_set_keymap('n', '_', ':vertical resize -5<CR>', {noremap=true, sile
 
 vim.api.nvim_set_keymap("n", "<leader>rn", "<cmd>lua vim.lsp.buf.rename()<CR>", { noremap = true })
 
+vim.api.nvim_set_keymap('i', 'jk', '<ESC>', { noremap = true })
+vim.api.nvim_set_keymap('i', 'kj', '<ESC>', { noremap = true })

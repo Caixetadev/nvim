@@ -85,7 +85,7 @@ _G.packer_plugins = {
     url = "https://github.com/goolord/alpha-nvim"
   },
   ["auto-session"] = {
-    config = { "\27LJ\2\n·\2\0\0\5\0\15\0\0186\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\a\0006\3\3\0009\3\4\0039\3\5\0039\3\6\3=\3\b\0025\3\t\0=\3\n\0025\3\f\0005\4\v\0=\4\r\3=\3\14\2B\0\2\1K\0\1\0\17session_lens\15theme_conf\1\0\1\14previewer\1\1\0\1\vborder\2\31auto_session_suppress_dirs\1\5\0\0\a~/\15~/Projects\16~/Downloads\6/\14log_level\1\0\2 auto_session_use_git_branch\1%auto_session_enable_last_session\1\nERROR\vlevels\blog\bvim\nsetup\17auto-session\frequire\0" },
+    config = { "\27LJ\2\n·\2\0\0\5\0\15\0\0186\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\a\0006\3\3\0009\3\4\0039\3\5\0039\3\6\3=\3\b\0025\3\t\0=\3\n\0025\3\f\0005\4\v\0=\4\r\3=\3\14\2B\0\2\1K\0\1\0\17session_lens\15theme_conf\1\0\1\14previewer\1\1\0\1\vborder\2\31auto_session_suppress_dirs\1\5\0\0\a~/\15~/Projects\16~/Downloads\6/\14log_level\1\0\2%auto_session_enable_last_session\1 auto_session_use_git_branch\1\nERROR\vlevels\blog\bvim\nsetup\17auto-session\frequire\0" },
     loaded = true,
     path = "/home/caixeta/.local/share/nvim/site/pack/packer/start/auto-session",
     url = "https://github.com/rmagatti/auto-session"
@@ -142,7 +142,7 @@ _G.packer_plugins = {
     url = "https://github.com/ray-x/go.nvim"
   },
   ["gopher.nvim"] = {
-    config = { "\27LJ\2\n°\1\0\0\5\0\6\0\t6\0\0\0'\2\1\0B\0\2\0029\1\2\0005\3\4\0005\4\3\0=\4\5\3B\1\2\1K\0\1\0\rcommands\1\0\2\ngofmt\ngopls\rgoimport\ngopls\1\0\5\timpl\timpl\niferr\niferr\ago\ago\fgotests\fgotests\17gomodifytags\17gomodifytags\nsetup\vgopher\frequire\0" },
+    config = { "\27LJ\2\n°\1\0\0\5\0\6\0\t6\0\0\0'\2\1\0B\0\2\0029\1\2\0005\3\4\0005\4\3\0=\4\5\3B\1\2\1K\0\1\0\rcommands\1\0\2\ngofmt\ngopls\rgoimport\ngopls\1\0\5\timpl\timpl\fgotests\fgotests\17gomodifytags\17gomodifytags\ago\ago\niferr\niferr\nsetup\vgopher\frequire\0" },
     loaded = true,
     path = "/home/caixeta/.local/share/nvim/site/pack/packer/start/gopher.nvim",
     url = "https://github.com/olexsmir/gopher.nvim"
@@ -238,6 +238,11 @@ _G.packer_plugins = {
     path = "/home/caixeta/.local/share/nvim/site/pack/packer/start/nvim-web-devicons",
     url = "https://github.com/nvim-tree/nvim-web-devicons"
   },
+  ["onedarkpro.nvim"] = {
+    loaded = true,
+    path = "/home/caixeta/.local/share/nvim/site/pack/packer/start/onedarkpro.nvim",
+    url = "https://github.com/olimorris/onedarkpro.nvim"
+  },
   ["packer.nvim"] = {
     loaded = true,
     path = "/home/caixeta/.local/share/nvim/site/pack/packer/start/packer.nvim",
@@ -318,10 +323,22 @@ _G.packer_plugins = {
 }
 
 time([[Defining packer_plugins]], false)
+-- Config for: gitsigns.nvim
+time([[Config for gitsigns.nvim]], true)
+try_loadstring("\27LJ\2\n6\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\rgitsigns\frequire\0", "config", "gitsigns.nvim")
+time([[Config for gitsigns.nvim]], false)
 -- Config for: gopher.nvim
 time([[Config for gopher.nvim]], true)
-try_loadstring("\27LJ\2\n°\1\0\0\5\0\6\0\t6\0\0\0'\2\1\0B\0\2\0029\1\2\0005\3\4\0005\4\3\0=\4\5\3B\1\2\1K\0\1\0\rcommands\1\0\2\ngofmt\ngopls\rgoimport\ngopls\1\0\5\timpl\timpl\niferr\niferr\ago\ago\fgotests\fgotests\17gomodifytags\17gomodifytags\nsetup\vgopher\frequire\0", "config", "gopher.nvim")
+try_loadstring("\27LJ\2\n°\1\0\0\5\0\6\0\t6\0\0\0'\2\1\0B\0\2\0029\1\2\0005\3\4\0005\4\3\0=\4\5\3B\1\2\1K\0\1\0\rcommands\1\0\2\ngofmt\ngopls\rgoimport\ngopls\1\0\5\timpl\timpl\fgotests\fgotests\17gomodifytags\17gomodifytags\ago\ago\niferr\niferr\nsetup\vgopher\frequire\0", "config", "gopher.nvim")
 time([[Config for gopher.nvim]], false)
+-- Config for: auto-session
+time([[Config for auto-session]], true)
+try_loadstring("\27LJ\2\n·\2\0\0\5\0\15\0\0186\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\a\0006\3\3\0009\3\4\0039\3\5\0039\3\6\3=\3\b\0025\3\t\0=\3\n\0025\3\f\0005\4\v\0=\4\r\3=\3\14\2B\0\2\1K\0\1\0\17session_lens\15theme_conf\1\0\1\14previewer\1\1\0\1\vborder\2\31auto_session_suppress_dirs\1\5\0\0\a~/\15~/Projects\16~/Downloads\6/\14log_level\1\0\2%auto_session_enable_last_session\1 auto_session_use_git_branch\1\nERROR\vlevels\blog\bvim\nsetup\17auto-session\frequire\0", "config", "auto-session")
+time([[Config for auto-session]], false)
+-- Config for: nvim-autopairs
+time([[Config for nvim-autopairs]], true)
+try_loadstring("\27LJ\2\n@\0\0\3\0\3\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\1K\0\1\0\nsetup\19nvim-autopairs\frequire\0", "config", "nvim-autopairs")
+time([[Config for nvim-autopairs]], false)
 -- Config for: transparent.nvim
 time([[Config for transparent.nvim]], true)
 try_loadstring("\27LJ\2\n\127\0\0\4\0\6\0\t6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\4\0005\3\3\0=\3\5\2B\0\2\1K\0\1\0\17extra_groups\1\0\0\1\4\0\0\16NormalFloat\19NvimTreeNormal\15toggleterm\nsetup\16transparent\frequire\0", "config", "transparent.nvim")
@@ -330,18 +347,6 @@ time([[Config for transparent.nvim]], false)
 time([[Config for todo-comments.nvim]], true)
 try_loadstring("\27LJ\2\n?\0\0\3\0\3\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\1K\0\1\0\nsetup\18todo-comments\frequire\0", "config", "todo-comments.nvim")
 time([[Config for todo-comments.nvim]], false)
--- Config for: auto-session
-time([[Config for auto-session]], true)
-try_loadstring("\27LJ\2\n·\2\0\0\5\0\15\0\0186\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\a\0006\3\3\0009\3\4\0039\3\5\0039\3\6\3=\3\b\0025\3\t\0=\3\n\0025\3\f\0005\4\v\0=\4\r\3=\3\14\2B\0\2\1K\0\1\0\17session_lens\15theme_conf\1\0\1\14previewer\1\1\0\1\vborder\2\31auto_session_suppress_dirs\1\5\0\0\a~/\15~/Projects\16~/Downloads\6/\14log_level\1\0\2 auto_session_use_git_branch\1%auto_session_enable_last_session\1\nERROR\vlevels\blog\bvim\nsetup\17auto-session\frequire\0", "config", "auto-session")
-time([[Config for auto-session]], false)
--- Config for: nvim-autopairs
-time([[Config for nvim-autopairs]], true)
-try_loadstring("\27LJ\2\n@\0\0\3\0\3\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\1K\0\1\0\nsetup\19nvim-autopairs\frequire\0", "config", "nvim-autopairs")
-time([[Config for nvim-autopairs]], false)
--- Config for: gitsigns.nvim
-time([[Config for gitsigns.nvim]], true)
-try_loadstring("\27LJ\2\n6\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\rgitsigns\frequire\0", "config", "gitsigns.nvim")
-time([[Config for gitsigns.nvim]], false)
 
 _G._packer.inside_compile = false
 if _G._packer.needs_bufread == true then
