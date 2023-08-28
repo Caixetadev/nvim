@@ -50,7 +50,7 @@ return require('packer').startup(function(use)
         char = "│",
         show_trailing_blankline_indent = false,
         show_current_context = false,
-        filetype_exclude = {"alpha", "NvimTree"}
+        filetype_exclude = {"NvimTree"}
       }
     end
   }
@@ -67,33 +67,33 @@ return require('packer').startup(function(use)
     end
   }
 
-  use {
-    "olexsmir/gopher.nvim",
-    requires = {
-      "leoluz/nvim-dap-go"
-    },
-    config = function()
-      local gopher = require("gopher")
-      gopher.setup({
-        commands = {
-          go = "go",
-          gomodifytags = "gomodifytags",
-          gotests = "gotests",
-          impl = "impl",
-          iferr = "iferr",
-        },
-        goimport = "gopls",
-        gofmt = "gopls",
-      })
-    end,
-    -- Optional: disable lazy loading
-    -- and force the plugin to load immediately
-    -- when Neovim starts up.
-    -- However, keep in mind that this can slow down
-    -- Neovim's startup time, especially if you have many plugins.
-    -- Uncomment the following line to disable lazy loading.
-    -- cmd = "packadd! gopher.nvim",
-  }
+  -- use {
+  --   "olexsmir/gopher.nvim",
+  --   requires = {
+  --     "leoluz/nvim-dap-go"
+  --   },
+  --   config = function()
+  --     local gopher = require("gopher")
+  --     gopher.setup({
+  --       commands = {
+  --         go = "go",
+  --         gomodifytags = "gomodifytags",
+  --         gotests = "gotests",
+  --         impl = "impl",
+  --         iferr = "iferr",
+  --       },
+  --       goimport = "gopls",
+  --       gofmt = "gopls",
+  --     })
+  --   end,
+  --   -- Optional: disable lazy loading
+  --   -- and force the plugin to load immediately
+  --   -- when Neovim starts up.
+  --   -- However, keep in mind that this can slow down
+  --   -- Neovim's startup time, especially if you have many plugins.
+  --   -- Uncomment the following line to disable lazy loading.
+  --   -- cmd = "packadd! gopher.nvim",
+  -- }
 
   use 'kdheepak/lazygit.nvim'
 
@@ -156,8 +156,6 @@ return require('packer').startup(function(use)
 
   use 'sheerun/vim-polyglot'
 
-  use 'goolord/alpha-nvim'
-
   use({
     "jose-elias-alvarez/null-ls.nvim",
     requires = { "nvim-lua/plenary.nvim" },
@@ -183,31 +181,31 @@ return require('packer').startup(function(use)
   }
 
   use {
-	  'VonHeikemen/lsp-zero.nvim',
-	  branch = 'v1.x',
-	  requires = {
-		  -- LSP Support
-		  {'neovim/nvim-lspconfig'},
-		  {'williamboman/mason.nvim'},
-		  {'williamboman/mason-lspconfig.nvim'},
+    'VonHeikemen/lsp-zero.nvim',
+    branch = 'v1.x',
+    requires = {
+      -- LSP Support
+      {'neovim/nvim-lspconfig'},
+      {'williamboman/mason.nvim'},
+      {'williamboman/mason-lspconfig.nvim'},
 
-		  -- Autocompletion
-		  {'hrsh7th/nvim-cmp'},
-		  {'hrsh7th/cmp-buffer'},
-		  {'hrsh7th/cmp-path'},
-		  {'saadparwaiz1/cmp_luasnip'},
-		  {'hrsh7th/cmp-nvim-lsp'},
-		  {'hrsh7th/cmp-nvim-lua'},
+      -- Autocompletion
+      {'hrsh7th/nvim-cmp'},
+      {'hrsh7th/cmp-buffer'},
+      {'hrsh7th/cmp-path'},
+      {'saadparwaiz1/cmp_luasnip'},
+      {'hrsh7th/cmp-nvim-lsp'},
+      {'hrsh7th/cmp-nvim-lua'},
 
-		  -- Snippets
-		  {'L3MON4D3/LuaSnip'},
-		  {'rafamadriz/friendly-snippets'},
-	  }
+      -- Snippets
+      {'L3MON4D3/LuaSnip'},
+      {'rafamadriz/friendly-snippets'},
+    }
   }
 
   use {
-	  "windwp/nvim-autopairs",
-	  config = function() require("nvim-autopairs").setup {} end
+    "windwp/nvim-autopairs",
+    config = function() require("nvim-autopairs").setup {} end
   }
 
   use {
@@ -223,5 +221,5 @@ return require('packer').startup(function(use)
     end
   }
 
---  use "lukas-reineke/indent-blankline.nvim"
+  --  use "lukas-reineke/indent-blankline.nvim"
 end)
