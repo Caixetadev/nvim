@@ -19,7 +19,12 @@ return require('lazy').setup({
   'neovim/nvim-lspconfig',
   'windwp/nvim-ts-autotag',
 
-  "olimorris/onedarkpro.nvim",
+  {"olimorris/onedarkpro.nvim",
+    priority = 1000,
+    config = function()
+      vim.cmd([[colorscheme onedark]])
+    end
+  },
 
   'folke/trouble.nvim',
   "akinsho/toggleterm.nvim",
@@ -65,15 +70,15 @@ return require('lazy').setup({
 
   "RRethy/vim-illuminate",
 
-  {
-    "echasnovski/mini.indentscope",
-    config = function ()
-      require("mini.indentscope").setup {
-        symbol = "│",
-        options = { try_as_border = true },
-      }
-    end
-  },
+  -- {
+  --   "echasnovski/mini.indentscope",
+  --   config = function ()
+  --     require("mini.indentscope").setup {
+  --       symbol = "│",
+  --       options = { try_as_border = true },
+  --     }
+  --   end
+  -- },
 
   {
     "olexsmir/gopher.nvim",
@@ -117,25 +122,13 @@ return require('lazy').setup({
 
   'f-person/git-blame.nvim',
 
-  {
-    'xiyaowong/transparent.nvim',
-    config = function()
-      require('transparent').setup({
-        extra_groups = {
-          "NormalFloat", -- plugins which have float panel such as Lazy, Mason, LspInfo
-          "NvimTreeNormal", -- NvimTree
-        },
-      })
-    end
-  },
-
-  {
-    "mcchrish/zenbones.nvim",
-    -- Optionally install Lush. Allows for more configuration or extending the colorscheme
-    -- If you don't want to install lush, make sure to set g:zenbones_compat = 1
-    -- In Vim, compat mode is turned on as Lush only works in Neovim.
-    dependencies = "rktjmp/lush.nvim"
-  },
+  -- {
+  --   "mcchrish/zenbones.nvim",
+  --   -- Optionally install Lush. Allows for more configuration or extending the colorscheme
+  --   -- If you don't want to install lush, make sure to set g:zenbones_compat = 1
+  --   -- In Vim, compat mode is turned on as Lush only works in Neovim.
+  --   dependencies = "rktjmp/lush.nvim"
+  -- },
 
   -- Tema
   -- use {'sainnhe/gruvbox-material', 
@@ -164,10 +157,10 @@ return require('lazy').setup({
 
   'ThePrimeagen/harpoon',
 
-  ({
+  {
     "jose-elias-alvarez/null-ls.nvim",
     dependencies = { "nvim-lua/plenary.nvim" },
-  }),
+  },
 
   'nvim-tree/nvim-web-devicons',
 
@@ -178,7 +171,7 @@ return require('lazy').setup({
   'wakatime/vim-wakatime',
 
   -- Vim Be Good
-  'ThePrimeagen/vim-be-good',
+  -- 'ThePrimeagen/vim-be-good',
 
   -- Git
   {
