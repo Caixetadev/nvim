@@ -1,3 +1,3 @@
 require("caixeta.remap")
-require("caixeta.plugins")
+require("caixeta.lazy")
 require("caixeta.set")
