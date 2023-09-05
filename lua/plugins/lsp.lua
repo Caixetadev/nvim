@@ -19,7 +19,7 @@ return {
     {'L3MON4D3/LuaSnip'},
     {'rafamadriz/friendly-snippets'},
 
-    {'ray-x/guihua.lua', build = 'cd lua/fzy && make'},
+    -- {'ray-x/guihua.lua', build = 'cd lua/fzy && make'},
   },
   config = function ()
     local lsp = require('lsp-zero')
@@ -63,24 +63,24 @@ return {
       group = format_sync_grp,
     })
 
-    require('guihua.maps').setup({
-      maps = {
-        close_view = '<C-x>',
-      }
-    })
+    -- require('guihua.maps').setup({
+    --   maps = {
+    --     close_view = '<C-x>',
+    --   }
+    -- })
 
     lsp.on_attach(function(client, bufnr)
       lsp.default_keymaps({buffer = bufnr})
     end)
 
-    lsp.format_on_save({
-      format_opts = {
-        timeout_ms = 10000,
-      },
-      servers = {
-        ['null-ls'] = {'javascript', 'javascriptreact', 'typescriptreact', 'typescript', 'lua'},
-      }
-    })
+    -- lsp.format_on_save({
+    --   format_opts = {
+    --     timeout_ms = 10000,
+    --   },
+    --   servers = {
+    --     ['null-ls'] = {'javascript', 'javascriptreact', 'typescriptreact', 'typescript', 'lua'},
+    --   }
+    -- })
 
     lsp.setup()
 

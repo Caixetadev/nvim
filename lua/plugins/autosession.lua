@@ -1,10 +1,10 @@
 return {
   'rmagatti/auto-session',
-  keys = {{"<C-s>",
-    function ()
-      require("auto-session.session-lens").search_session()
-    end
-  }},
+  -- keys = {{"<C-s>",
+  --   function ()
+  --     require("auto-session.session-lens").search_session()
+  --   end
+  -- }},
   config = function()
     require("auto-session").setup {
       log_level = vim.log.levels.ERROR,

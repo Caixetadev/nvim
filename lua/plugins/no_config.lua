@@ -1,6 +1,6 @@
 return {
-  'windwp/nvim-ts-autotag',
-  'wakatime/vim-wakatime',
+  "windwp/nvim-ts-autotag",
+  "wakatime/vim-wakatime",
 
   -- {
   --   "echasnovski/mini.indentscope",
@@ -21,7 +21,7 @@ return {
   -- },
 
   -- Tema
-  -- use {'sainnhe/gruvbox-material', 
+  -- use {'sainnhe/gruvbox-material',
   --   config = function ()
   --     vim.cmd('colorscheme gruvbox-material')
   --     vim.g.gruvbox_material_background = "hard"
