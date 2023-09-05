@@ -1,12 +1,7 @@
 return {
-  'rmagatti/auto-session',
-  -- keys = {{"<C-s>",
-  --   function ()
-  --     require("auto-session.session-lens").search_session()
-  --   end
-  -- }},
+  "rmagatti/auto-session",
   config = function()
-    require("auto-session").setup {
+    require("auto-session").setup({
       log_level = vim.log.levels.ERROR,
       auto_session_suppress_dirs = { "~/", "~/Projects", "~/Downloads", "/" },
       auto_session_use_git_branch = false,
@@ -18,6 +13,10 @@ return {
         theme_conf = { border = true },
         previewer = false,
       },
-    }
-  end
+    })
+
+    vim.keymap.set("n", "<C-s>", require("auto-session.session-lens").search_session, {
+      noremap = true,
+    })
+  end,
 }
