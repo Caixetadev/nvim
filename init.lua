@@ -1,1 +1,2 @@
-require('caixeta')
+require("config.autocmds")
+require("caixeta")
