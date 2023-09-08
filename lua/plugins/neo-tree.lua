@@ -10,7 +10,7 @@ return {
     "nvim-tree/nvim-web-devicons",
     "MunifTanjim/nui.nvim",
   },
-  event = "VeryLazy",
+  -- event = "VeryLazy",
   keys = {
     { "<leader>e", ":Neotree toggle float<CR>", silent = true, desc = "Float File Explorer" },
     { "<leader><tab>", ":Neotree toggle left<CR>", silent = true, desc = "Left File Explorer" },

@@ -168,19 +168,6 @@ return {
         },
       })
 
-      lsp.configure("tailwindcss", {
-        settings = {
-          tailwindCSS = {
-            experimental = {
-              classRegex = {
-                "tv\\(([^)]*)\\)",
-                "[\"'`]([^\"'`]*).*?[\"'`]",
-              },
-            },
-          },
-        },
-      })
-
       lsp.ensure_installed({
         "tsserver",
         "bashls",
@@ -199,40 +186,16 @@ return {
         "yamlls",
       })
 
-      local format_sync_grp = vim.api.nvim_create_augroup("GoImport", {})
-      vim.api.nvim_create_autocmd("BufWritePre", {
-        pattern = "*.go",
-        callback = function()
-          require("go.format").goimport()
-        end,
-        group = format_sync_grp,
-      })
-
-      -- require('guihua.maps').setup({
-      --   maps = {
-      --     close_view = '<C-x>',
-      --   }
-      -- })
-
       lsp.on_attach(function(client, bufnr)
         lsp.default_keymaps({ buffer = bufnr })
       end)
-
-      -- lsp.format_on_save({
-      --   format_opts = {
-      --     timeout_ms = 10000,
-      --   },
-      --   servers = {
-      --     ['null-ls'] = {'javascript', 'javascriptreact', 'typescriptreact', 'typescript', 'lua'},
-      --   }
-      -- })
 
       local capabilities = require("cmp_nvim_lsp").default_capabilities()
       local nvim_lsp = require("lspconfig")
 
       -- Use an on_attach function to only map the following keys
       -- after the language server attaches to the current buffer
-      local on_attach = function(client, bufnr)
+      --[[ local on_attach = function(client, bufnr)
         local function buf_set_keymap(...)
           vim.api.nvim_buf_set_keymap(bufnr, ...)
         end
@@ -249,11 +212,20 @@ return {
         --buf_set_keymap('n', 'gd', '<Cmd>lua vim.lsp.buf.definition()<CR>', opts)
         buf_set_keymap("n", "gi", "<cmd>lua vim.lsp.buf.implementation()<CR>", opts)
         --buf_set_keymap('n', 'K', '<Cmd>lua vim.lsp.buf.hover()<CR>', opts)
-      end
+      end ]]
 
       nvim_lsp.tailwindcss.setup({
-        on_attach = on_attach,
         capabilities = capabilities, -- Utilize as capacidades do LSP definidas anteriormente
+        settings = {
+          tailwindCSS = {
+            experimental = {
+              classRegex = {
+                "tv\\(([^)]*)\\)",
+                "[\"'`]([^\"'`]*).*?[\"'`]",
+              },
+            },
+          },
+        },
       })
 
       lsp.setup()
