@@ -24,6 +24,10 @@ vim.wo.number = true
 
 vim.o.splitright = true
 
+vim.opt.updatetime = 100 -- faster completion (4000ms default)
+vim.opt.cursorline = true -- highlight the current line
+vim.opt.pumheight = 10 -- pop up menu height
+
 -- Buffers
 vim.api.nvim_set_keymap("n", "<leader>bd", ":bd<CR>", { noremap = true, silent = true, desc = "Close buffer" })
 vim.api.nvim_set_keymap("n", "<leader>bn", ":bn<CR>", { noremap = true, silent = true })
