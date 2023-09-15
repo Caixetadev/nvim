@@ -141,6 +141,13 @@ return {
         },
         -- { name = 'buffer' },
       }),
+      preselect = require("cmp").PreselectMode.None,
+      complete = {
+        completeopt = menu,
+        menuone,
+        noinsert,
+        noselect,
+      },
       mapping = cmp.mapping.preset.insert({
         ["<C-b>"] = cmp.mapping.scroll_docs(-4),
         ["<C-f>"] = cmp.mapping.scroll_docs(4),
