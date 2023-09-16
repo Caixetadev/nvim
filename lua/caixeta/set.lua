@@ -30,6 +30,8 @@ vim.opt.pumheight = 10 -- pop up menu height
 vim.opt.fillchars = { eob = " " } -- change the character at the end of buffer
 vim.opt.scrolloff = 8 -- Makes sure there are always eight lines of context
 vim.opt.sidescrolloff = 8 -- Makes sure there are always eight lines of context
+vim.opt.showmode = false -- we don't need to see things like -- INSERT -- anymore
+vim.opt.undofile = true
 
 -- Buffers
 vim.api.nvim_set_keymap("n", "<leader>bd", ":bd<CR>", { noremap = true, silent = true, desc = "Close buffer" })
