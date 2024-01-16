@@ -1,6 +1,6 @@
 return {
   "wakatime/vim-wakatime",
-
+  "andweeb/presence.nvim",
   -- {
   --   "echasnovski/mini.indentscope",
   --   config = function ()
@@ -27,8 +27,6 @@ return {
   --     vim.opt.background = 'dark'
   --   end
   -- }
-
-  -- use 'andweeb/presence.nvim'
 
   -- 'ThePrimeagen/vim-be-good',
 
