@@ -18,12 +18,3 @@ vim.api.nvim_create_autocmd("ColorScheme", {
     vim.cmd("highlight NeoTreeEndOfBuffer guibg=#1d2021") -- 1d2021
   end,
 })
-
-local format_sync_grp = vim.api.nvim_create_augroup("GoImport", {})
-vim.api.nvim_create_autocmd("BufWritePre", {
-  pattern = "*.go",
-  callback = function()
-    require("go.format").goimport()
-  end,
-  group = format_sync_grp,
-})
