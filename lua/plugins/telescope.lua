@@ -1,5 +1,5 @@
 return {
-  'nvim-telescope/telescope.nvim', version = '0.1.1',
+  'nvim-telescope/telescope.nvim', version = '0.1.4',
   dependencies = { {'nvim-lua/plenary.nvim'} },
   keys = {
     { "<leader>ff", "<cmd>Telescope find_files<CR>",  desc = "Find files" },
