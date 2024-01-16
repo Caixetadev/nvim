@@ -133,6 +133,7 @@ return {
 
     cmp.setup({
       sources = cmp.config.sources({
+        { name = "codeium" },
         {
           name = "nvim_lsp",
           -- entry_filter = function(entry)
@@ -177,6 +178,10 @@ return {
         completion = {
           col_offset = -3, -- align the abbr and word on cursor (due to fields order below)
         },
+      },
+
+      experimental = {
+        ghost_text = { hlgroup = "Comment" },
       },
 
       formatting = {
