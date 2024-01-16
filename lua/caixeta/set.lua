@@ -55,3 +55,9 @@ vim.api.nvim_set_keymap("n", "<M-_>", ":resize -5<CR>", { noremap = true, silent
 vim.api.nvim_set_keymap("n", "+", ":vertical resize +5<CR>", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("n", "_", ":vertical resize -5<CR>", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("n", "<leader>rn", "<cmd>lua vim.lsp.buf.rename()<CR>", { noremap = true })
+
+vim.filetype.add({
+  extension = {
+    tfvars = "terraform",
+  },
+})

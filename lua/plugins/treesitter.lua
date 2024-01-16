@@ -37,6 +37,8 @@ return {
         "typescript",
         "yaml",
         "html",
+        "hcl",
+        "terraform",
       },
       -- auto install above language parsers
       auto_install = true,
