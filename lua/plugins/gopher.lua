@@ -2,7 +2,7 @@ return {
   "olexsmir/gopher.nvim",
   ft = "go",
   dependencies = {
-    "leoluz/nvim-dap-go"
+    "leoluz/nvim-dap-go",
   },
   config = function()
     local gopher = require("gopher")
@@ -14,8 +14,6 @@ return {
         impl = "impl",
         iferr = "iferr",
       },
-      goimport = "gopls",
-      gofmt = "gopls",
     })
   end,
   -- Optional: disable lazy loading
