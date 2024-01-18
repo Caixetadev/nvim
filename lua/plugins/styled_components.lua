@@ -1,4 +1,4 @@
 return {
-  'styled-components/vim-styled-components',
-  ft = "typescript"
+  "styled-components/vim-styled-components",
+  ft = "typescript",
 }
