@@ -1,6 +1,7 @@
 return {
   url = "https://gitlab.com/schrieveslaach/sonarlint.nvim",
   ft = "go",
+  enabled = false, -- <<< here
   config = function()
     require("sonarlint").setup({
       server = {

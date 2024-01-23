@@ -1,12 +1,14 @@
 return {
   "RRethy/vim-illuminate",
+  enabled = false,
   event = { "BufRead", "BufNewFile" },
-  config = function ()
+  config = function()
     local illuminate = require("illuminate")
 
     illuminate.configure({
       filetypes_denylist = {
-        "alpha", "NvimTree"
+        "alpha",
+        "NvimTree",
       },
     })
 
@@ -26,5 +28,5 @@ return {
         map("[[", "prev", buffer)
       end,
     })
-  end
+  end,
 }

@@ -1,4 +1,4 @@
-return  {
+return {
   "windwp/nvim-autopairs",
-  config = true
+  config = true,
 }

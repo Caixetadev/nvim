@@ -1,6 +1,10 @@
 return {
   "olexsmir/gopher.nvim",
-  ft = "go",
+  -- ft = "go",
+  --[[ keys = {
+    { ":GoIfErr" },
+    { ":GoImpl" },
+  }, ]]
   dependencies = {
     "leoluz/nvim-dap-go",
   },

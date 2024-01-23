@@ -1,6 +1,9 @@
 return {
   "wakatime/vim-wakatime",
-  "andweeb/presence.nvim",
+  {
+    "andweeb/presence.nvim",
+    lazy = true,
+  },
   -- {
   --   "echasnovski/mini.indentscope",
   --   config = function ()
