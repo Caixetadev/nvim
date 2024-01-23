@@ -1,11 +1,14 @@
 return {
-  "sainnhe/gruvbox-material",
+  "neanias/everforest-nvim",
+  name = "everforest",
   enabled = true,
   priority = 1000,
   config = function()
-    vim.o.background = "dark"
-    vim.g.gruvbox_material_background = "hard"
-    -- vim.g.gruvbox_material_transparent_background = 1
-    vim.cmd.colorscheme("gruvbox-material")
+    require("everforest").setup({
+      background = "hard",
+      ui_contrast = "high",
+    })
+
+    vim.cmd([[colorscheme everforest]])
   end,
 }
