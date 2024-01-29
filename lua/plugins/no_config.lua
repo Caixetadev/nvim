@@ -2,7 +2,7 @@ return {
   "wakatime/vim-wakatime",
   {
     "andweeb/presence.nvim",
-    lazy = true,
+    -- lazy = true,
   },
   -- {
   --   "echasnovski/mini.indentscope",
