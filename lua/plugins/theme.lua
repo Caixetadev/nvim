@@ -6,7 +6,7 @@ return {
   config = function()
     require("everforest").setup({
       background = "hard",
-      ui_contrast = "high",
+      -- ui_contrast = "high",
     })
 
     vim.cmd([[colorscheme everforest]])
