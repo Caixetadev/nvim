@@ -1,6 +1,6 @@
 return {
   "RRethy/vim-illuminate",
-  enabled = false,
+  enabled = true,
   event = { "BufRead", "BufNewFile" },
   config = function()
     local illuminate = require("illuminate")
@@ -10,7 +10,13 @@ return {
         "alpha",
         "NvimTree",
       },
+
+      under_cursor = true,
     })
+
+    vim.api.nvim_set_hl(0, "IlluminatedWordText", { link = "Visual" })
+    vim.api.nvim_set_hl(0, "IlluminatedWordRead", { link = "Visual" })
+    vim.api.nvim_set_hl(0, "IlluminatedWordWrite", { link = "Visual" })
 
     local function map(key, dir, buffer)
       vim.keymap.set("n", key, function()

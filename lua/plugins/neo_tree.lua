@@ -5,6 +5,7 @@
 -- https://github.com/nvim-neo-tree/neo-tree.nvim/wiki/Recipes
 return {
   "nvim-neo-tree/neo-tree.nvim",
+  branch = "v3.x",
   dependencies = {
     "nvim-lua/plenary.nvim",
     "nvim-tree/nvim-web-devicons",
@@ -12,8 +13,8 @@ return {
   },
   -- event = "VeryLazy",
   keys = {
-    { "<leader>e", ":Neotree toggle float<CR>", silent = true, desc = "Float File Explorer" },
-    { "<leader><tab>", ":Neotree toggle left<CR>", silent = true, desc = "Left File Explorer" },
+    { "<leader>e", ":Neotree toggle float reveal<CR>", silent = true, desc = "Float File Explorer" },
+    { "<leader><tab>", ":Neotree toggle left reveal<CR>", silent = true, desc = "Left File Explorer" },
   },
   config = function()
     require("neo-tree").setup({
@@ -60,6 +61,10 @@ return {
       },
       filesystem = {
         use_libuv_file_watcher = true,
+        follow_current_file = {
+          enabled = true,
+          leave_dirs_open = true,
+        },
         filtered_items = {
           hide_dotfiles = false,
           hide_gitignored = false,

@@ -1,5 +1,6 @@
 return {
   "VonHeikemen/lsp-zero.nvim",
+  -- enabled = false,
   branch = "v1.x",
   dependencies = {
     -- LSP Support
@@ -9,8 +10,8 @@ return {
 
     -- Autocompletion
     { "hrsh7th/nvim-cmp" },
-    { "hrsh7th/cmp-buffer" },
-    { "hrsh7th/cmp-path" },
+    -- { "hrsh7th/cmp-buffer" },
+    -- { "hrsh7th/cmp-path" },
     { "saadparwaiz1/cmp_luasnip" },
     { "hrsh7th/cmp-nvim-lsp" },
     { "hrsh7th/cmp-nvim-lua" },
@@ -55,13 +56,14 @@ return {
       "dockerls",
       "emmet_ls",
       "golangci_lint_ls",
+
       -- "gopls",
       "grammarly",
       "html",
       "jsonls",
       "lua_ls",
       "prismals",
-      "tailwindcss",
+      -- "tailwindcss",
       "taplo",
       "yamlls",
     })
@@ -83,15 +85,6 @@ return {
       end, { buffer = bufnr, desc = "lsp: go to next diagnostic" })
       lsp.default_keymaps({ buffer = bufnr })
     end)
-
-    -- lsp.format_on_save({
-    --   format_opts = {
-    --     timeout_ms = 10000,
-    --   },
-    --   servers = {
-    --     ['null-ls'] = {'javascript', 'javascriptreact', 'typescriptreact', 'typescript', 'lua'},
-    --   }
-    -- })
 
     lsp.setup()
 
