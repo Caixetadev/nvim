@@ -1,12 +1,12 @@
 return {
   "akinsho/toggleterm.nvim",
   keys = {
-    { "<c-\\>" },
+    { "<c-t>" },
   },
   config = function()
     require("toggleterm").setup({
       size = 80,
-      open_mapping = [[<c-\>]],
+      open_mapping = [[<c-t>]],
       direction = "vertical",
     })
 
