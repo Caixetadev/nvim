@@ -4,9 +4,9 @@ return {
   main = "ibl",
   opts = {
     indent = {
-      char = { "┊" },
+      -- char = { "┊" },
       -- char = "▏",
-      -- char = "│",
+      char = "│",
     },
     scope = {
       show_start = false,

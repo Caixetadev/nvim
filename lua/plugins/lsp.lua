@@ -37,18 +37,6 @@ return {
       },
     })
 
-    lsp.configure("tailwindcss", {
-      settings = {
-        tailwindCSS = {
-          experimental = {
-            classRegex = {
-              "tv\\(([^)]*)\\)",
-              "[\"'`]([^\"'`]*).*?[\"'`]",
-            },
-          },
-        },
-      },
-    })
 
     lsp.ensure_installed({
       "tsserver",
@@ -85,6 +73,10 @@ return {
         vim.diagnostic.goto_next({ float = true })
       end, { buffer = bufnr, desc = "lsp: go to next diagnostic" })
       lsp.default_keymaps({ buffer = bufnr })
+
+      vim.keymap.set("n", "<space>ca", function()
+        vim.lsp.buf.code_action()
+      end, { buffer = bufnr, desc = "lsp: code action" })
     end)
 
     lsp.setup()

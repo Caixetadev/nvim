@@ -5,9 +5,10 @@ return {
   },
   config = function()
     require("toggleterm").setup({
-      size = 80,
+      size = 60,
       open_mapping = [[<c-t>]],
       direction = "vertical",
+      shade_terminals = false
     })
 
     function _G.set_terminal_keymaps()
