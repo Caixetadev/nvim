@@ -115,15 +115,11 @@ return {
     lspkind.init({})
 
     cmp.setup({
-      sources = cmp.config.sources({
-        {
-          name = "nvim_lsp",
-          -- entry_filter = function(entry)
-          --   return require("cmp").lsp.CompletionItemKind.Snippet ~= entry:get_kind()
-          -- end
-        },
-        -- { name = 'buffer' },
-      }),
+      sources = {
+        { name = "nvim_lsp" },
+        { name = "codeium" },
+        { name = 'buffer' },
+      },
       preselect = require("cmp").PreselectMode.None,
       complete = {
         completeopt = menu,
@@ -149,9 +145,9 @@ return {
         },
       },
 
-      experimental = {
-        ghost_text = { hlgroup = "Comment" },
-      },
+      -- experimental = {
+      --   ghost_text = { hlgroup = "Comment" },
+      -- },
 
       formatting = {
         fields = { "kind", "abbr", "menu" },
@@ -163,7 +159,9 @@ return {
             -- path = "[Path]",
             buffer = "[Buffer]",
             luasnip = "[LuaSnip]",
+            codeium = "[Codeium]"
           },
+
           before = function(entry, vim_item) -- for tailwind css autocomplete
             if vim_item.kind == "Color" and entry.completion_item.documentation then
               local _, _, r, g, b = string.find(entry.completion_item.documentation, "^rgb%((%d+), (%d+), (%d+)")
