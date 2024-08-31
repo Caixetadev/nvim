@@ -27,6 +27,7 @@ vim.o.splitright = true
 vim.opt.updatetime = 100          -- faster completion (4000ms default)
 vim.opt.cursorline = true         -- highlight the current line
 vim.opt.pumheight = 10            -- pop up menu height
+-- Remove the ~ from empty lines
 vim.opt.fillchars = { eob = " " } -- change the character at the end of buffer
 vim.opt.scrolloff = 10            -- Makes sure there are always eight lines of context
 vim.opt.sidescrolloff = 10        -- Makes sure there are always eight lines of context

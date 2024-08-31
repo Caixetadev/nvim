@@ -46,13 +46,13 @@ return {
       "emmet_ls",
       "golangci_lint_ls",
 
-      -- "gopls",
+      "gopls",
       "grammarly",
       "html",
       "jsonls",
       "lua_ls",
       "prismals",
-      -- "tailwindcss",
+      "tailwindcss",
       "taplo",
       "yamlls",
     })
