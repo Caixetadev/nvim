@@ -3,18 +3,18 @@ return {
   ft = "go",
   config = function()
     require("go").setup({
-      go = "go",                -- go command, can be go[default] or go1.18beta1
-      goimports = "gopls",      -- goimport command, can be gopls[default] or goimport
-      fillstruct = "gopls",     -- can be nil (use fillstruct, slower) and gopls
-      gofmt = "gofumpt",        -- gofmt cmd,
-      max_line_len = 120,       -- max line length in goline format
-      tag_transform = false,    -- tag_transfer  check gomodifytags for details
-      test_template = "",       -- default to testify if not set; g:go_nvim_tests_template  check gotests for details
-      test_template_dir = "",   -- default to nil if not set; g:go_nvim_tests_template_dir  check gotests for details
-      comment_placeholder = "", -- comment_placeholder your cool placeholder e.g. ﳑ       
-      icons = false,            --{breakpoint = '🧘', currentpos = '🏃'},  -- setup to `false` to disable icons setup
-      verbose = false,          -- output loginf in messages
-      lsp_cfg = false,          -- true: use non-default gopls setup specified in go/lsp.lua
+      go = "go",                       -- go command, can be go[default] or go1.18beta1
+      goimports = "goimports-reviser", -- goimport command, can be gopls[default] or goimport
+      fillstruct = "gopls",            -- can be nil (use fillstruct, slower) and gopls
+      gofmt = "gofumpt",               -- gofmt cmd,
+      max_line_len = 120,              -- max line length in goline format
+      tag_transform = false,           -- tag_transfer  check gomodifytags for details
+      test_template = "",              -- default to testify if not set; g:go_nvim_tests_template  check gotests for details
+      test_template_dir = "",          -- default to nil if not set; g:go_nvim_tests_template_dir  check gotests for details
+      comment_placeholder = "",        -- comment_placeholder your cool placeholder e.g. ﳑ       
+      icons = false,                   --{breakpoint = '🧘', currentpos = '🏃'},  -- setup to `false` to disable icons setup
+      verbose = false,                 -- output loginf in messages
+      lsp_cfg = false,                 -- true: use non-default gopls setup specified in go/lsp.lua
       -- false: do nothing
       -- if lsp_cfg is a table, merge table with with non-default gopls setup in go/lsp.lua, e.g.
       --   lsp_cfg = {settings={gopls={matcher='CaseInsensitive', ['local'] = 'your_local_module_path', gofumpt = true }}}
