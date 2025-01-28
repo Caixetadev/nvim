@@ -1,6 +1,14 @@
 return {
   "wakatime/vim-wakatime",
   {
+    "stevearc/dressing.nvim",
+    dependencies = { "MunifTanjim/nui.nvim" },
+    opts = {},
+    config = function()
+      require("dressing").setup()
+    end,
+  },
+  {
     "andweeb/presence.nvim",
     -- lazy = true,
   },

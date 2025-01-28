@@ -15,6 +15,7 @@ vim.o.softtabstop = 2
 vim.opt.termguicolors = true
 
 vim.opt.relativenumber = true
+vim.opt.numberwidth = 4 -- set number column width to 2 {default 4}
 
 vim.opt.inccommand = "split"
 
@@ -29,8 +30,8 @@ vim.opt.cursorline = true         -- highlight the current line
 vim.opt.pumheight = 10            -- pop up menu height
 -- Remove the ~ from empty lines
 vim.opt.fillchars = { eob = " " } -- change the character at the end of buffer
-vim.opt.scrolloff = 10            -- Makes sure there are always eight lines of context
-vim.opt.sidescrolloff = 10        -- Makes sure there are always eight lines of context
+vim.opt.scrolloff = 8             -- Makes sure there are always eight lines of context
+vim.opt.sidescrolloff = 8         -- Makes sure there are always eight lines of context
 vim.opt.showmode = false          -- we don't need to see things like -- INSERT -- anymore
 vim.opt.undofile = true
 

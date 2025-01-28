@@ -1,29 +1,28 @@
--- local colors = {
---   fg = "#fffff",
---   bg = "#fffff",
--- }
---
--- vim.api.nvim_create_autocmd("ColorScheme", {
---   callback = function()
---     -- change the background color of floating windows and borders.
---     vim.cmd("highlight NormalFloat guibg=none guifg=none")
---     vim.cmd("highlight FloatBorder guifg=" .. colors.fg .. " guibg=none")
---     vim.cmd("highlight NormalNC guibg=none guifg=none")
---
---     -- change neotree background colors
---     -- Default: NeoTreeNormal  xxx ctermfg=223 ctermbg=232 guifg=#d4be98 guibg=#141617
---     vim.cmd("highlight NeoTreeNormal guibg=NONE")
---     vim.cmd("highlight NeoTreeFloatNormal guifg=NONE guibg=NONE")
---     vim.cmd("highlight NeoTreeFloatBorder guifg=NONE guibg=NONE")
---     vim.cmd("highlight NeoTreeEndOfBuffer guibg=NONE") -- 1d2021
---   end,
--- })
+vim.api.nvim_create_autocmd("ColorScheme", {
+  callback = function()
+    vim.api.nvim_set_hl(0, "FloatBorder", { fg = "#181825", bg = "#181825" })
+    vim.api.nvim_set_hl(0, "LspInfoBorder", { fg = "none", bg = "none" })
+    vim.api.nvim_set_hl(0, "NormalFloat", { fg = "none", bg = "none" })
+  end,
+})
 
--- local format_sync_grp = vim.api.nvim_create_augroup("goimports", {})
+-- local goimport_sync_grp = vim.api.nvim_create_augroup("GoImport", {})
 -- vim.api.nvim_create_autocmd("BufWritePre", {
 --   pattern = "*.go",
 --   callback = function()
---     require('go.format').goimports()
+--     require("go.format").goimport()
 --   end,
---   group = format_sync_grp,
+--   group = goimport_sync_grp,
 -- })
+
+local api = vim.api
+
+-- don't auto comment new line
+api.nvim_create_autocmd("BufEnter", { command = [[set formatoptions-=cro]] })
+
+-- Highlight on yank
+api.nvim_create_autocmd("TextYankPost", {
+  callback = function()
+    vim.highlight.on_yank()
+  end,
+})

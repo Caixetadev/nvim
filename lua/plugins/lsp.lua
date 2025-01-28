@@ -47,6 +47,7 @@ return {
       "golangci_lint_ls",
 
       "gopls",
+      "gofumpt",
       "grammarly",
       "html",
       "jsonls",
