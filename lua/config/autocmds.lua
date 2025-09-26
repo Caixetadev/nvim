@@ -1,6 +1,6 @@
 vim.api.nvim_create_autocmd("ColorScheme", {
   callback = function()
-    vim.api.nvim_set_hl(0, "FloatBorder", { fg = "#181825", bg = "#181825" })
+    vim.api.nvim_set_hl(0, "FloatBorder", { fg = "#272E32", bg = "#1E2326" })
     vim.api.nvim_set_hl(0, "LspInfoBorder", { fg = "none", bg = "none" })
     vim.api.nvim_set_hl(0, "NormalFloat", { fg = "none", bg = "none" })
   end,

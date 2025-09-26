@@ -39,6 +39,7 @@ return {
         "html",
         "hcl",
         "terraform",
+        "astro",
       },
       -- auto install above language parsers
       auto_install = true,

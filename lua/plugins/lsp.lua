@@ -56,6 +56,7 @@ return {
       "tailwindcss",
       "taplo",
       "yamlls",
+      "astro",
     })
 
     -- require('guihua.maps').setup({
@@ -111,6 +112,12 @@ return {
     nvim_lsp.tailwindcss.setup({
       on_attach = on_attach,
       capabilities = capabilities, -- Utilize as capacidades do LSP definidas anteriormente
+    })
+
+    nvim_lsp["astro"].setup({
+      capabilities = capabilities,
+      on_attach = on_attach,
+      filetypes = { "astro" },
     })
 
     lspkind.init({})

@@ -12,6 +12,9 @@ return {
     "andweeb/presence.nvim",
     -- lazy = true,
   },
+  {
+    "LunarVim/bigfile.nvim"
+  }
   -- {
   --   "echasnovski/mini.indentscope",
   --   config = function ()

@@ -20,6 +20,7 @@ return {
       json = { "prettierd" },
       python = { "black" },
       yaml = { "prettierd" },
+      astro = { "prettierd" },
     },
     format_on_save = {
       timeout_ms = 500,
