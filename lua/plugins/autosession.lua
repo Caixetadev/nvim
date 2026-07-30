@@ -1,22 +1,27 @@
 return {
   "rmagatti/auto-session",
-  config = function()
-    require("auto-session").setup({
-      log_level = vim.log.levels.ERROR,
-      auto_session_suppress_dirs = { "~/Documents", "~/www" },
-      auto_session_use_git_branch = false,
+  -- enabled = false,
+  lazy = false,
+  keys = {
+    -- Replaces require("auto-session.session-lens").search_session, which no longer exists
+    { "<C-s>", "<cmd>AutoSession search<CR>", desc = "Session search" },
+  },
 
-      auto_session_enable_last_session = false,
+  ---enables autocomplete for opts
+  ---@module "auto-session"
+  ---@type AutoSession.Config
+  opts = {
+    log_level = "error",
+    suppressed_dirs = { "~/Documents", "~/www" }, -- was: auto_session_suppress_dirs
+    git_use_branch_name = false,                  -- was: auto_session_use_git_branch
+    auto_restore_last_session = false,            -- was: auto_session_enable_last_session
 
-      -- -- ⚠️ This will only work if Telescope.nvim is installed
-      session_lens = {
-        theme_conf = { border = true },
-        previewer = false,
+    -- ⚠️ Session picker only shows up nicely if Telescope, snacks.nvim, or
+    -- Fzf-Lua is installed; otherwise it falls back to vim.ui.select.
+    session_lens = {
+      picker_opts = {
+        border = true, -- Telescope-specific; see README for Snacks/Fzf-Lua equivalents
       },
-    })
-
-    vim.keymap.set("n", "<C-s>", require("auto-session.session-lens").search_session, {
-      noremap = true,
-    })
-  end,
+    },
+  },
 }
