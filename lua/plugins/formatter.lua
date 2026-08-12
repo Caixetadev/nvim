@@ -1,5 +1,6 @@
 return {
   "stevearc/conform.nvim",
+
   opts = {
     formatters_by_ft = {
       sh = { "beautysh" },
@@ -8,8 +9,12 @@ return {
       c = { "clang_format" },
       cpp = { "clang_format" },
       java = { "clang_format" },
+
       lua = { "stylua" },
-      go = { "goimports", "gofumpt" },
+
+      -- Go
+      go = { "gofumpt" },
+
       html = { "prettierd" },
       javascript = { "prettierd" },
       typescript = { "prettierd" },
@@ -22,8 +27,9 @@ return {
       yaml = { "prettierd" },
       astro = { "prettierd" },
     },
+
     format_on_save = {
-      timeout_ms = 500,
+      timeout_ms = 1000,
       lsp_fallback = true,
     },
   },
