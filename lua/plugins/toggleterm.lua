@@ -5,9 +5,9 @@ return {
   },
   config = function()
     require("toggleterm").setup({
-      -- size = 45,
+      size = 45,
       open_mapping = [[<c-t>]],
-      direction = "horizontal",
+      direction = "vertical",
       shade_terminals = true,
     })
 
