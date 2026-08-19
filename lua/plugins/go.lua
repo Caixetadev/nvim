@@ -28,10 +28,11 @@ return {
       diagnostic = {
         hdlr = false,
         underline = true,
-        virtual_text = {
-          space = 0,
-          prefix = "",
-        },
+        virtual_text = false,
+        -- virtual_text = {
+        --   space = 0,
+        --   prefix = "",
+        -- },
         signs = true,
       },
     },
