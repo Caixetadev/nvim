@@ -13,8 +13,8 @@ return {
   },
   -- event = "VeryLazy",
   keys = {
-    { "<leader>e",     ":Neotree toggle float reveal<CR>", silent = true, desc = "Float File Explorer" },
-    { "<leader><tab>", ":Neotree toggle left reveal<CR>",  silent = true, desc = "Left File Explorer" },
+    { "<leader>e", ":Neotree toggle float reveal<CR>", silent = true, desc = "Float File Explorer" },
+    { "<leader><tab>", ":Neotree toggle left reveal<CR>", silent = true, desc = "Left File Explorer" },
   },
   config = function()
     require("neo-tree").setup({
@@ -77,24 +77,24 @@ return {
           },
         },
       },
-      event_handlers = {
-        {
-          event = "neo_tree_window_after_open",
-          handler = function(args)
-            if args.position == "left" or args.position == "right" then
-              vim.cmd("wincmd =")
-            end
-          end,
-        },
-        {
-          event = "neo_tree_window_after_close",
-          handler = function(args)
-            if args.position == "left" or args.position == "right" then
-              vim.cmd("wincmd =")
-            end
-          end,
-        },
-      },
+      -- event_handlers = {
+      --   {
+      --     event = "neo_tree_window_after_open",
+      --     handler = function(args)
+      --       if args.position == "left" or args.position == "right" then
+      --         vim.cmd("wincmd =")
+      --       end
+      --     end,
+      --   },
+      --   {
+      --     event = "neo_tree_window_after_close",
+      --     handler = function(args)
+      --       if args.position == "left" or args.position == "right" then
+      --         vim.cmd("wincmd =")
+      --       end
+      --     end,
+      --   },
+      -- },
     })
   end,
 }
