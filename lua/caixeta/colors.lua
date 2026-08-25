@@ -1,9 +1,9 @@
 -- ~/.config/nvim/lua/colors/miniblue.lua
 return {
   -- backgrounds
-  base00 = "#090909", -- bg absoluto (do Pywal)
+  base00 = "#000000", -- bg absoluto (do Pywal)
   base01 = "#0f0f0f", -- lighter bg
-  base02 = "#1a1a1a", -- selection bg
+  base02 = "#000000", -- selection bg
   base03 = "#242424", -- elevated surface
 
   -- foregrounds

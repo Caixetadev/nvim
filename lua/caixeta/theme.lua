@@ -6,7 +6,7 @@ end
 
 vim.g.colors_name = "reverie"
 
-local colors = require('caixeta.colors')
+local colors = require("caixeta.colors")
 
 local function set_hl(group, opts)
   vim.api.nvim_set_hl(0, group, opts)
@@ -54,7 +54,7 @@ set_hl("Substitute", { fg = colors.base01, bg = colors.base0A })
 set_hl("SpecialKey", { fg = colors.base03 })
 set_hl("TooLong", { fg = colors.base08 })
 set_hl("Underlined", { fg = colors.base08 })
-set_hl("Visual", { bg = colors.base02 })
+set_hl("Visual", { bg = "#1a1a1a" })
 set_hl("VisualNOS", { fg = colors.base08 })
 set_hl("WarningMsg", { fg = colors.base08 })
 set_hl("WildMenu", { fg = colors.base08, bg = colors.base0A })
@@ -124,10 +124,10 @@ set_hl("NormalFloat", { fg = colors.base05, bg = colors.base00 })
 set_hl("FloatBorder", { fg = colors.base03, bg = colors.base00 })
 
 -- popup menu
-set_hl("Pmenu", { fg = colors.base05, bg = colors.base00 })    -- Popup menu normal item
+set_hl("Pmenu", { fg = colors.base05, bg = colors.base00 }) -- Popup menu normal item
 set_hl("PmenuSel", { fg = colors.base06, bg = colors.base01 }) -- Selected item
-set_hl("PmenuSbar", { bg = colors.base00 })                    -- Scrollbar
-set_hl("PmenuThumb", { bg = colors.base01 })                   -- Thumb of scrollbar
+set_hl("PmenuSbar", { bg = colors.base00 }) -- Scrollbar
+set_hl("PmenuThumb", { bg = colors.base01 }) -- Thumb of scrollbar
 
 -- telescope
 set_hl("TelescopeBorder", { fg = colors.base03 })

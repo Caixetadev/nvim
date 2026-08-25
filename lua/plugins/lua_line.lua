@@ -54,6 +54,9 @@ return {
               left = 1,
               right = 0,
             },
+            color = {
+              bg = "#000000",
+            },
           },
           {
             "filename",
